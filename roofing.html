@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roofing Services | Gridiron Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .orange-tint {
+            background: linear-gradient(to top, rgba(234, 88, 12, 0.7), transparent);
+        }
+        
+        .learn-more {
+            color: #ea580c;
+        }
+        
+        .roofing-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-hammer text-white text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-white">GRIDIRON <span class="text-blue-300">CONSTRUCTION</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800 hover:text-white transition">Home</a>
+                        <a href="index.html#about" class="px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800 hover:text-white transition">About</a>
+                        <a href="index.html#services" class="px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800 hover:text-white transition">Services</a>
+                        <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800 hover:text-white transition">Projects</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800 hover:text-white transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md text-blue-200 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-blue-900 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-200 hover:text-white hover:bg-blue-800">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-200 hover:text-white hover:bg-blue-800">About</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-200 hover:text-white hover:bg-blue-800">Services</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-200 hover:text-white hover:bg-blue-800">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-blue-200 hover:text-white hover:bg-blue-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 roofing-hero text-white parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">PROFESSIONAL <span class="text-blue-300">ROOFING SERVICES</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">Protect your property with our expert roofing solutions - installation, repair, and maintenance you can trust.</p>
+                <div class="animate-fade-in delay-300">
+                    <a href="#contact" class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">GET A FREE QUOTE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Types Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">ROOFING SOLUTIONS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">We specialize in all types of roofing materials and systems for residential and commercial properties.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Asphalt Shingles</h3>
+                    <p class="text-gray-600 mb-6">The most popular residential roofing material offering durability, affordability, and a variety of style options.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>30+ year lifespan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Wide range of colors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Cost-effective</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Metal Roofing</h3>
+                    <p class="text-gray-600 mb-6">Premium roofing solution offering exceptional durability, energy efficiency, and modern aesthetics.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>50+ year lifespan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Energy efficient</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Fire resistant</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-warehouse text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Flat Roof Systems</h3>
+                    <p class="text-gray-600 mb-6">Specialized solutions for commercial and modern residential properties with flat or low-slope roofs.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>EPDM, TPO, and modified bitumen</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Excellent waterproofing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>UV resistant</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">OUR <span class="text-blue-600">ROOFING PROCESS</span></h2>
+                    <p class="text-gray-600 mb-8">At Gridiron Construction, we follow a meticulous process to ensure your roofing project is completed to the highest standards.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Consultation & Inspection</h4>
+                                <p class="text-gray-600">We begin with a thorough inspection of your existing roof and discuss your needs and budget.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Material Selection</h4>
+                                <p class="text-gray-600">We help you choose the best roofing materials for your climate, budget, and aesthetic preferences.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Professional Installation</h4>
+                                <p class="text-gray-600">Our certified roofers install your new roof with precision and attention to detail.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                4
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Final Inspection & Warranty</h4>
+                                <p class="text-gray-600">We conduct a final quality check and provide comprehensive warranty information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-100">
+                    <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
+                        <img src="https://images.unsplash.com/photo-1605268418331-e117e798218c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roofing installation" class="w-full h-auto">
+                        <div class="absolute inset-0 orange-tint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">WHY CHOOSE <span class="text-blue-600">OUR ROOFING SERVICES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">We go above and beyond to deliver roofing solutions that stand the test of time.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-award text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Certified Roofers</h3>
+                    <p class="text-gray-600">Our team consists of factory-trained and certified roofing professionals with extensive experience.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Quality Materials</h3>
+                    <p class="text-gray-600">We use only premium roofing materials from trusted manufacturers with strong warranties.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Timely Completion</h3>
+                    <p class="text-gray-600">We respect your time and complete projects efficiently without compromising quality.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-500">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-hand-holding-usd text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Fair Pricing</h3>
+                    <p class="text-gray-600">We offer competitive pricing with no hidden costs and provide detailed written estimates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">ROOFING PROJECTS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">View examples of our completed roofing projects for residential and commercial clients.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-fade-in delay-200">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential roofing" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Residential Shingle Roof</h3>
+                                <p class="text-blue-200">Modern asphalt shingle installation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Metal roofing" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Metal Roof Installation</h3>
+                                <p class="text-blue-200">Standing seam metal roof</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial roofing" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Commercial Flat Roof</h3>
+                                <p class="text-blue-200">TPO membrane installation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6 animate-fade-in">READY FOR A NEW ROOF?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Contact Gridiron Construction today for a free, no-obligation roofing estimate.</p>
+            <div class="animate-fade-in delay-200">
+                <a href="#contact" class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 mr-4 mb-4">GET A FREE QUOTE</a>
+                <a href="tel:+14696568382" class="inline-block border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">CALL NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">CONTACT <span class="text-blue-600">OUR ROOFING TEAM</span></h2>
+                    <p class="text-gray-600 mb-8">Have questions about your roofing project? Our experts are ready to help.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-blue-900 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Address</h4>
+                                <p class="text-gray-600">123 Construction Way, Building 5<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-blue-900 mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Phone</h4>
+                                <p class="text-gray-600">(469) 656 8382</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-blue-900 mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Email</h4>
+                <p class="text-gray-600">info@gridironconstruction.com</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="text-blue-900 mr-4 mt-1">
+                <i class="fas fa-clock text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-blue-900 mb-1">Hours</h4>
+                <p class="text-gray-600">Monday - Friday: 8am - 6pm<br>Saturday: 9am - 2pm<br>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="animate-fade-in delay-100">
+          <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+            <div class="mb-6">
+              <label for="name" class="block text-gray-700 font-medium mb-2">Name*</label>
+              <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email*</label>
+              <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-6">
+              <label for="phone" class="block text-gray-700 font-medium mb-2">Phone*</label>
+              <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-6">
+              <label for="roof-type" class="block text-gray-700 font-medium mb-2">Roof Type</label>
+              <select id="roof-type" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Select roof type</option>
+                <option value="asphalt">Asphalt Shingles</option>
+                <option value="metal">Metal Roofing</option>
+                <option value="flat">Flat Roof System</option>
+                <option value="tile">Tile Roofing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 font-medium mb-2">Project Details*</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">REQUEST FREE QUOTE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="mb-8 md:mb-0">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-hammer text-white text-2xl mr-2"></i>
+            <span class="text-xl font-bold">GRIDIRON <span class="text-blue-300">CONSTRUCTION</span></span>
+          </div>
+          <p class="text-blue-200 mb-4">Building the future with excellence.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-blue-200 hover:text-white">Roofing</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Development</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Concrete</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Fencing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-blue-200 hover:text-white">About Us</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Our Team</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Careers</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-blue-200 hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Terms of Service</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Licenses</a></li>
+            <li><a href="#" class="text-blue-200 hover:text-white">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-200">
+        <p>&copy; 2023 Gridiron Construction. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    // Add animation classes when elements come into view
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-fade-in');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+
+    // Run once on page load
+    window.addEventListener('load', animateOnScroll);
+    
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+</body>
+</html>
