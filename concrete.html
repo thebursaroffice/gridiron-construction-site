@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Services | Gridiron Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .orange-tint {
+            background: linear-gradient(to top, rgba(234, 88, 12, 0.7), transparent);
+        }
+        
+        .concrete-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+        
+        .service-card {
+            border-left: 4px solid #ea580c;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* .concrete-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+        } */
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #ea580c;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffedd5;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile dropdown styles */
+        .mobile-dropdown-content {
+            display: none;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #ea580c;
+            text-decoration: none;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-content {
+            display: block;
+        }
+
+        /* Form dropdown styles */
+        .form-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-dropdown select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background-color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        .form-dropdown::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo" class="h-40 object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Home</a>
+                        <a href="index.html#about"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">About</a>
+
+                        <!-- Services Dropdown -->
+                        <div class="dropdown">
+                            <button
+                                class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition flex items-center">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="index.html#services">All Services</a>
+                                <a href="roofing.html">Roofing</a>
+                                <a href="development.html">Development</a>
+                                <a href="concrete.html">Concrete</a>
+                                <a href="fencing.html">Fencing</a>
+                            </div>
+                        </div>
+
+                        <a href="projects.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Projects</a>
+                        <a href="contact-us.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button
+                        class="mobile-menu-button p-2 rounded-md text-orange-600 hover:text-orange-800 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">About</a>
+
+                <!-- Mobile Services Dropdown -->
+                <div class="mobile-dropdown">
+                    <a href="#services"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100 flex items-center justify-between mobile-dropdown-toggle">
+                        Services <i class="fas fa-chevron-down text-xs"></i>
+                    </a>
+                    <div class="mobile-dropdown-content">
+                        <a href="#services">All Services</a>
+                        <a href="roofing.html">Roofing</a>
+                        <a href="development.html">Development</a>
+                        <a href="concrete.html">Concrete</a>
+                        <a href="fencing.html">Fencing</a>
+                    </div>
+                </div>
+
+                <a href="#projects"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Projects</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 concrete-hero text-white parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">PRECISION <span class="text-blue-300">CONCRETE SERVICES</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">Expert concrete solutions for residential, commercial, and industrial applications.</p>
+                <div class="animate-fade-in delay-300">
+                    <a href="#contact" class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">GET A FREE ESTIMATE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concrete Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">CONCRETE SERVICES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Comprehensive concrete solutions for every project need.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Residential Concrete</h3>
+                    <p class="text-gray-600 mb-6">Quality concrete work for homes and residential properties.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Driveways & Walkways</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Patios & Pool Decks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Foundations & Slabs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Stamped & Decorative</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Commercial Concrete</h3>
+                    <p class="text-gray-600 mb-6">Durable concrete solutions for commercial properties.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Parking Lots & Garages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Sidewalks & Curbs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Retail & Office Spaces</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Industrial Flooring</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-industry text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Specialty Concrete</h3>
+                    <p class="text-gray-600 mb-6">Advanced concrete applications for specialized needs.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Polished Concrete Floors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Stained & Colored Concrete</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Concrete Repair & Restoration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Concrete Cutting & Drilling</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gray-50 concrete-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">WHY CHOOSE <span class="text-blue-600">GRIDIRON CONCRETE</span></h2>
+                    <p class="text-gray-600 mb-8">With decades of experience in concrete construction, we deliver superior results that stand the test of time.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Premium Materials</h4>
+                                <p class="text-gray-600">We use only the highest quality concrete mixes and reinforcement materials.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Expert Craftsmanship</h4>
+                                <p class="text-gray-600">Our skilled craftsmen deliver precision work with attention to every detail.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Advanced Techniques</h4>
+                                <p class="text-gray-600">Utilizing the latest concrete technologies and installation methods.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Durability Guarantee</h4>
+                                <p class="text-gray-600">Our concrete work comes with industry-leading warranties for your peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-100">
+                    <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
+                        <img src="https://images.unsplash.com/photo-1600673782921-d5396db23893?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Concrete work" class="w-full h-auto">
+                        <div class="absolute inset-0 orange-tint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">CONCRETE PROCESS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">A systematic approach to ensure quality concrete installation every time.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="animate-fade-in delay-200">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pencil-ruler text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Planning & Design</h3>
+                        <p class="text-gray-600 text-center">Site evaluation, measurements, and design specifications tailored to your project.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trowel text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Site Preparation</h3>
+                        <p class="text-gray-600 text-center">Proper excavation, grading, and base preparation for optimal concrete performance.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-truck-pickup text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Concrete Placement</h3>
+                        <p class="text-gray-600 text-center">Precision pouring and placement using professional techniques and equipment.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-500">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-check-circle text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Finishing & Curing</h3>
+                        <p class="text-gray-600 text-center">Expert finishing touches and proper curing for maximum strength and durability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">CONCRETE WORK</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Showcasing our expertise through completed concrete projects.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-fade-in delay-200">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Stamped concrete patio" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Lakeside Residence</h3>
+                                <p class="text-blue-200">Stamped concrete patio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial concrete" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Tech Park Plaza</h3>
+                                <p class="text-blue-200">Commercial concrete walkways</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Polished concrete floors" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Urban Lofts</h3>
+                                <p class="text-blue-200">Polished concrete floors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 animate-fade-in delay-500">
+                <a href="#" class="inline-block border-2 border-blue-900 hover:bg-blue-900 hover:text-white text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300">VIEW ALL PROJECTS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6 animate-fade-in">READY TO POUR YOUR PROJECT?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Get a free estimate for your concrete project from Gridiron Construction.</p>
+            <div class="animate-fade-in delay-200">
+                <a href="#contact" class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 mr-4 mb-4">GET A FREE QUOTE</a>
+                <a href="tel:+14696568382" class="inline-block border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">CALL NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <div class="text-center mb-16 w-full">
+                    <h2 class="text-6xl font-bold text-blue-900 mb-6">CONTACT <span class="text-blue-600">US</span></h2>
+                </div>
+                <div class="w-full max-w-2xl">
+                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <!-- Name Field -->
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <!-- Phone Field -->
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <!-- Subject Field -->
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <!-- Concrete Service Dropdown 
+                        <div class="mb-6 form-dropdown">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Concrete Service Needed</label>
+                            <select id="service" class="w-full">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="driveway">Driveway Installation</option>
+                                <option value="patio">Patio Construction</option>
+                                <option value="foundation">Foundation Work</option>
+                                <option value="sidewalk">Sidewalk Installation</option>
+                                <option value="stamped">Stamped Concrete</option>
+                                <option value="repair">Concrete Repair</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div> -->
+                        
+                        <!-- Project Details -->
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                            SUBMIT REQUEST
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hammer text-white text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">GRIDIRON <span class="text-blue-300">CONSTRUCTION</span></span>
+                    </div>
+                    <p class="text-blue-200 mb-4">Building the future with excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="development.html" class="text-blue-200 hover:text-white">Development</a></li>
+                        <li><a href="roofing.html" class="text-blue-200 hover:text-white">Roofing</a></li>
+                        <li><a href="concrete.html" class="text-blue-200 hover:text-white">Concrete</a></li>
+                        <li><a href="fencing.html" class="text-blue-200 hover:text-white">Fencing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-blue-200 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Licenses</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-200">
+                <p>&copy; 2023 Gridiron Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Run once on page load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
