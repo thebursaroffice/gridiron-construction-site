@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,59 +9,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .animate-fade-in {
             animation: fadeIn 1s ease-out forwards;
         }
-        
+
         .delay-100 {
             animation-delay: 0.1s;
         }
-        
+
         .delay-200 {
             animation-delay: 0.2s;
         }
-        
+
         .delay-300 {
             animation-delay: 0.3s;
         }
-        
+
         .hover-scale {
             transition: transform 0.3s ease;
         }
-        
+
         .hover-scale:hover {
             transform: scale(1.03);
         }
-        
+
         .parallax {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-        
+
         .orange-tint {
             background: linear-gradient(to top, rgba(234, 88, 12, 0.7), transparent);
         }
-        
+
         .development-hero {
             background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
         }
-        
+
         .phase-card {
             border-left: 4px solid #ea580c;
             transition: all 0.3s ease;
         }
-        
+
         .phase-card:hover {
             border-left: 4px solid #3b82f6;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-        
+
         .timeline-item:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -157,9 +165,10 @@
     </style>
 </head>
 <script>
-  // Example: disable right-click
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
+    // Example: disable right-click
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
 </script>
+
 <body class="font-sans bg-white">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
@@ -226,12 +235,12 @@
 
                 <!-- Mobile Services Dropdown -->
                 <div class="mobile-dropdown">
-                    <a href="#services"
+                    <button
                         class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100 flex items-center justify-between mobile-dropdown-toggle">
                         Services <i class="fas fa-chevron-down text-xs"></i>
-                    </a>
+                    </button>
                     <div class="mobile-dropdown-content">
-                        <a href="#services">All Services</a>
+                        <a href="index.html#services">All Services</a>
                         <a href="roofing.html">Roofing</a>
                         <a href="roofing.html">Development</a>
                         <a href="conrete.html">Concrete</a>
@@ -251,10 +260,14 @@
     <section class="pt-32 pb-20 development-hero text-white parallax">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">COMPREHENSIVE <span class="text-blue-300">DEVELOPMENT SERVICES</span></h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">From concept to completion, we transform visions into reality with innovative development solutions.</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">COMPREHENSIVE <span
+                        class="text-blue-300">DEVELOPMENT SERVICES</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">From concept to
+                    completion, we transform visions into reality with innovative development solutions.</p>
                 <div class="animate-fade-in delay-300">
-                    <a href="#contact" class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">START YOUR PROJECT</a>
+                    <a href="#contact"
+                        class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">START
+                        YOUR PROJECT</a>
                 </div>
             </div>
         </div>
@@ -264,16 +277,20 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">DEVELOPMENT EXPERTISE</span></h2>
-                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Specialized development services tailored to meet your project's unique requirements.</p>
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">DEVELOPMENT EXPERTISE</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Specialized development services
+                    tailored to meet your project's unique requirements.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
                     <div class="text-blue-900 mb-4">
                         <i class="fas fa-city text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-blue-900 mb-4">Commercial Development</h3>
-                    <p class="text-gray-600 mb-6">Complete commercial property development including office buildings, retail centers, and mixed-use complexes.</p>
+                    <p class="text-gray-600 mb-6">Complete commercial property development including office buildings,
+                        retail centers, and mixed-use complexes.</p>
                     <ul class="text-gray-600 mb-6 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
@@ -289,12 +306,14 @@
                         </li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
                     <div class="text-blue-900 mb-4">
                         <i class="fas fa-home text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-blue-900 mb-4">Residential Development</h3>
-                    <p class="text-gray-600 mb-6">Full-service residential development from single-family homes to large-scale community projects.</p>
+                    <p class="text-gray-600 mb-6">Full-service residential development from single-family homes to
+                        large-scale community projects.</p>
                     <ul class="text-gray-600 mb-6 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
@@ -310,12 +329,14 @@
                         </li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
                     <div class="text-blue-900 mb-4">
                         <i class="fas fa-industry text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-blue-900 mb-4">Industrial Development</h3>
-                    <p class="text-gray-600 mb-6">Specialized industrial property development including warehouses, manufacturing facilities, and logistics centers.</p>
+                    <p class="text-gray-600 mb-6">Specialized industrial property development including warehouses,
+                        manufacturing facilities, and logistics centers.</p>
                     <ul class="text-gray-600 mb-6 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
@@ -339,115 +360,137 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">DEVELOPMENT PROCESS</span></h2>
-                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">A structured approach to ensure successful project execution from conception to completion.</p>
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">DEVELOPMENT PROCESS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">A structured approach to ensure
+                    successful project execution from conception to completion.</p>
             </div>
-            
+
             <div class="relative">
                 <!-- Timeline for desktop -->
                 <div class="hidden md:grid md:grid-cols-5 gap-8">
                     <div class="timeline-item relative text-center animate-fade-in delay-200">
                         <div class="phase-card bg-white p-6 rounded-lg h-full">
-                            <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-xl font-bold">1</span>
                             </div>
                             <h3 class="text-lg font-bold text-blue-900 mb-2">Feasibility Study</h3>
-                            <p class="text-gray-600">Market analysis, site evaluation, and financial projections to determine project viability.</p>
+                            <p class="text-gray-600">Market analysis, site evaluation, and financial projections to
+                                determine project viability.</p>
                         </div>
                     </div>
                     <div class="timeline-item relative text-center animate-fade-in delay-300">
                         <div class="phase-card bg-white p-6 rounded-lg h-full">
-                            <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-xl font-bold">2</span>
                             </div>
                             <h3 class="text-lg font-bold text-blue-900 mb-2">Design & Planning</h3>
-                            <p class="text-gray-600">Architectural design, engineering, and obtaining necessary permits and approvals.</p>
+                            <p class="text-gray-600">Architectural design, engineering, and obtaining necessary permits
+                                and approvals.</p>
                         </div>
                     </div>
                     <div class="timeline-item relative text-center animate-fade-in delay-400">
                         <div class="phase-card bg-white p-6 rounded-lg h-full">
-                            <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-xl font-bold">3</span>
                             </div>
                             <h3 class="text-lg font-bold text-blue-900 mb-2">Site Preparation</h3>
-                            <p class="text-gray-600">Clearing, grading, utility installation, and foundation work to prepare for construction.</p>
+                            <p class="text-gray-600">Clearing, grading, utility installation, and foundation work to
+                                prepare for construction.</p>
                         </div>
                     </div>
                     <div class="timeline-item relative text-center animate-fade-in delay-500">
                         <div class="phase-card bg-white p-6 rounded-lg h-full">
-                            <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-xl font-bold">4</span>
                             </div>
                             <h3 class="text-lg font-bold text-blue-900 mb-2">Construction</h3>
-                            <p class="text-gray-600">Quality construction with regular progress updates and strict adherence to timelines.</p>
+                            <p class="text-gray-600">Quality construction with regular progress updates and strict
+                                adherence to timelines.</p>
                         </div>
                     </div>
                     <div class="timeline-item relative text-center animate-fade-in delay-600">
                         <div class="phase-card bg-white p-6 rounded-lg h-full">
-                            <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-xl font-bold">5</span>
                             </div>
                             <h3 class="text-lg font-bold text-blue-900 mb-2">Completion</h3>
-                            <p class="text-gray-600">Final inspections, punch list completion, and handover of the finished project.</p>
+                            <p class="text-gray-600">Final inspections, punch list completion, and handover of the
+                                finished project.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Timeline for mobile -->
                 <div class="md:hidden space-y-8">
                     <div class="animate-fade-in delay-200">
                         <div class="phase-card bg-white p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
                                     <span class="text-lg font-bold">1</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-blue-900">Feasibility Study</h3>
                             </div>
-                            <p class="text-gray-600 pl-16">Market analysis, site evaluation, and financial projections to determine project viability.</p>
+                            <p class="text-gray-600 pl-16">Market analysis, site evaluation, and financial projections
+                                to determine project viability.</p>
                         </div>
                     </div>
                     <div class="animate-fade-in delay-300">
                         <div class="phase-card bg-white p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
                                     <span class="text-lg font-bold">2</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-blue-900">Design & Planning</h3>
                             </div>
-                            <p class="text-gray-600 pl-16">Architectural design, engineering, and obtaining necessary permits and approvals.</p>
+                            <p class="text-gray-600 pl-16">Architectural design, engineering, and obtaining necessary
+                                permits and approvals.</p>
                         </div>
                     </div>
                     <div class="animate-fade-in delay-400">
                         <div class="phase-card bg-white p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
                                     <span class="text-lg font-bold">3</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-blue-900">Site Preparation</h3>
                             </div>
-                            <p class="text-gray-600 pl-16">Clearing, grading, utility installation, and foundation work to prepare for construction.</p>
+                            <p class="text-gray-600 pl-16">Clearing, grading, utility installation, and foundation work
+                                to prepare for construction.</p>
                         </div>
                     </div>
                     <div class="animate-fade-in delay-500">
                         <div class="phase-card bg-white p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
                                     <span class="text-lg font-bold">4</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-blue-900">Construction</h3>
                             </div>
-                            <p class="text-gray-600 pl-16">Quality construction with regular progress updates and strict adherence to timelines.</p>
+                            <p class="text-gray-600 pl-16">Quality construction with regular progress updates and strict
+                                adherence to timelines.</p>
                         </div>
                     </div>
                     <div class="animate-fade-in delay-600">
                         <div class="phase-card bg-white p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4">
                                     <span class="text-lg font-bold">5</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-blue-900">Completion</h3>
                             </div>
-                            <p class="text-gray-600 pl-16">Final inspections, punch list completion, and handover of the finished project.</p>
+                            <p class="text-gray-600 pl-16">Final inspections, punch list completion, and handover of the
+                                finished project.</p>
                         </div>
                     </div>
                 </div>
@@ -460,51 +503,62 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                 <div class="mb-12 lg:mb-0 animate-fade-in">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">WHY CHOOSE <span class="text-blue-600">GRIDIRON DEVELOPMENT</span></h2>
-                    <p class="text-gray-600 mb-8">With over 20 years of experience in property development, we bring unparalleled expertise to every project.</p>
-                    
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">WHY CHOOSE <span class="text-blue-600">GRIDIRON
+                            DEVELOPMENT</span></h2>
+                    <p class="text-gray-600 mb-8">With over 20 years of experience in property development, we bring
+                        unparalleled expertise to every project.</p>
+
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
                                 <i class="fas fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-900 mb-1">End-to-End Solutions</h4>
-                                <p class="text-gray-600">We handle every aspect of development from land acquisition to final construction.</p>
+                                <p class="text-gray-600">We handle every aspect of development from land acquisition to
+                                    final construction.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
                                 <i class="fas fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-900 mb-1">Local Market Expertise</h4>
-                                <p class="text-gray-600">Deep understanding of regional zoning laws, market trends, and community needs.</p>
+                                <p class="text-gray-600">Deep understanding of regional zoning laws, market trends, and
+                                    community needs.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
                                 <i class="fas fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-900 mb-1">Sustainable Practices</h4>
-                                <p class="text-gray-600">Commitment to environmentally responsible development with green building techniques.</p>
+                                <p class="text-gray-600">Commitment to environmentally responsible development with
+                                    green building techniques.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
                                 <i class="fas fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-900 mb-1">Transparent Communication</h4>
-                                <p class="text-gray-600">Regular updates and open dialogue throughout the entire development process.</p>
+                                <p class="text-gray-600">Regular updates and open dialogue throughout the entire
+                                    development process.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="animate-fade-in delay-100">
                     <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction site" class="w-full h-auto">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Construction site" class="w-full h-auto">
                         <div class="absolute inset-0 orange-tint"></div>
                     </div>
                 </div>
@@ -516,14 +570,18 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span class="text-blue-600">DEVELOPMENT PROJECTS</span></h2>
-                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Explore our portfolio of successfully completed development projects.</p>
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">DEVELOPMENT PROJECTS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Explore our portfolio of
+                    successfully completed development projects.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="animate-fade-in delay-200">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
-                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial development" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Commercial development" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                             <div>
                                 <h3 class="text-xl font-bold text-white">Harborview Office Park</h3>
                                 <p class="text-blue-200">Mixed-use commercial development</p>
@@ -533,8 +591,10 @@
                 </div>
                 <div class="animate-fade-in delay-300">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" alt="Residential development" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
+                            alt="Residential development" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                             <div>
                                 <h3 class="text-xl font-bold text-white">Willow Creek Estates</h3>
                                 <p class="text-blue-200">Luxury residential community</p>
@@ -544,8 +604,10 @@
                 </div>
                 <div class="animate-fade-in delay-400">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Industrial development" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Industrial development" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                             <div>
                                 <h3 class="text-xl font-bold text-white">Logistics Center West</h3>
                                 <p class="text-blue-200">Industrial warehouse complex</p>
@@ -555,7 +617,9 @@
                 </div>
             </div>
             <div class="text-center mt-12 animate-fade-in delay-500">
-                <a href="#" class="inline-block border-2 border-blue-900 hover:bg-blue-900 hover:text-white text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300">VIEW ALL PROJECTS</a>
+                <a href="#"
+                    class="inline-block border-2 border-blue-900 hover:bg-blue-900 hover:text-white text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300">VIEW
+                    ALL PROJECTS</a>
             </div>
         </div>
     </section>
@@ -564,15 +628,20 @@
     <section class="py-20 bg-blue-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-6 animate-fade-in">READY TO DEVELOP YOUR VISION?</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Partner with Gridiron Construction for expert development services tailored to your needs.</p>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Partner with Gridiron Construction for
+                expert development services tailored to your needs.</p>
             <div class="animate-fade-in delay-200">
-                <a href="#contact" class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 mr-4 mb-4">START YOUR PROJECT</a>
-                <a href="tel:+14696568382" class="inline-block border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">CALL NOW</a>
+                <a href="#contact"
+                    class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 mr-4 mb-4">START
+                    YOUR PROJECT</a>
+                <a href="tel:+14696568382"
+                    class="inline-block border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">CALL
+                    NOW</a>
             </div>
         </div>
     </section>
 
-     <!-- Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center">
@@ -587,28 +656,28 @@
                             <input type="text" id="name"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Email Field -->
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
                             <input type="email" id="email"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Phone Field -->
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
                             <input type="tel" id="phone"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Subject Field -->
                         <div class="mb-6">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
                             <input type="text" id="subject"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Service Dropdown 
                         <div class="mb-6 form-dropdown">
                             <label for="service" class="block text-gray-700 font-medium mb-2">How can we help you?</label>
@@ -621,14 +690,14 @@
                                 <option value="other">Other</option>
                             </select>
                         </div> -->
-                        
+
                         <!-- Project Details -->
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
                             <textarea id="message" rows="5"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
-                        
+
                         <!-- Submit Button -->
                         <button type="submit"
                             class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
@@ -700,16 +769,16 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
+
                     // Close mobile menu if open
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
@@ -721,11 +790,11 @@
         // Add animation classes when elements come into view
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.animate-fade-in');
-            
+
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                
+
                 if (elementPosition < windowHeight - 100) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
@@ -735,9 +804,10 @@
 
         // Run once on page load
         window.addEventListener('load', animateOnScroll);
-        
+
         // Run on scroll
         window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
+
 </html>
