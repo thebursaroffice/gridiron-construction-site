@@ -227,7 +227,7 @@
                         <a href="#services">All Services</a>
                         <a href="roofing.html">Roofing</a>
                         <a href="development.html">Development</a>
-                        <a href="conrete.html">Concrete</a>
+                        <a href="concrete.html">Concrete</a>
                         <a href="fencing.html">Fencing</a>
                     </div>
                 </div>
@@ -630,6 +630,14 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile Services dropdown toggle
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdown = button.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
         });
 
         // Mobile dropdown toggle

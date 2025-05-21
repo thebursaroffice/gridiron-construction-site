@@ -13,6 +13,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -24,6 +25,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -35,6 +37,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -241,7 +244,8 @@
         }
 
         .faq-content.active {
-            max-height: 500px; /* Adjust based on your content */
+            max-height: 500px;
+            /* Adjust based on your content */
             padding-bottom: 1.5rem;
         }
 
@@ -255,11 +259,12 @@
     </style>
 </head>
 <script>
-  // Example: disable right-click
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
+    // Example: disable right-click
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
 </script>
+
 <body class="font-sans bg-gray-50">
-   <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-20">
@@ -332,7 +337,7 @@
                         <a href="#services">All Services</a>
                         <a href="roofing.html">Roofing</a>
                         <a href="development.html">Development</a>
-                        <a href="conrete.html">Concrete</a>
+                        <a href="concrete.html">Concrete</a>
                         <a href="fencing.html">Fencing</a>
                     </div>
                 </div>
@@ -349,7 +354,8 @@
     <section class="pt-32 pb-20 bg-blue-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">CONTACT <span class="text-blue-300">GRIDIRON</span></h1>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">CONTACT <span
+                        class="text-blue-300">GRIDIRON</span></h1>
                 <p class="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in delay-100">
                     We're here to answer your questions and discuss your next construction project.
                 </p>
@@ -378,7 +384,8 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Email Us</h3>
                     <p class="text-gray-600 mb-4">Send us your questions or project details for a prompt response.</p>
-                    <a href="mailto:info@gridironconstruction.com" class="text-blue-900 font-bold hover:underline">info@gridironbuilders.com</a>
+                    <a href="mailto:info@gridironconstruction.com"
+                        class="text-blue-900 font-bold hover:underline">info@gridironbuilders.com</a>
                 </div>
 
                 <!-- Location Card -->
@@ -400,8 +407,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Map -->
                 <div class="animate-slide-left">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">OUR <span class="text-blue-900">LOCATION</span></h2>
-                    <p class="text-gray-600 mb-8">Our headquarters is conveniently located in the heart of the city with easy access to major highways.</p>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">OUR <span class="text-blue-900">LOCATION</span>
+                    </h2>
+                    <p class="text-gray-600 mb-8">Our headquarters is conveniently located in the heart of the city with
+                        easy access to major highways.</p>
                     <div id="map" class="hover-scale"></div>
                     <div class="mt-6">
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Business Hours</h3>
@@ -413,9 +422,10 @@
 
                 <!-- Contact Form -->
                 <div class="animate-slide-right">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">SEND US A <span class="text-blue-900">MESSAGE</span></h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">SEND US A <span
+                            class="text-blue-900">MESSAGE</span></h2>
                     <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
-                    
+
                     <form class="bg-white p-8 rounded-xl shadow-md">
                         <!-- Name Field -->
                         <div class="mb-6">
@@ -423,21 +433,21 @@
                             <input type="text" id="name" required
                                 class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
                         </div>
-                        
+
                         <!-- Email Field -->
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
                             <input type="email" id="email" required
                                 class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
                         </div>
-                        
+
                         <!-- Phone Field -->
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
                             <input type="tel" id="phone"
                                 class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
                         </div>
-                        
+
                         <!-- Service Dropdown -->
                         <div class="mb-6 form-dropdown">
                             <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed *</label>
@@ -450,14 +460,14 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        
+
                         <!-- Project Details -->
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
                             <textarea id="message" rows="5" required
                                 class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none"></textarea>
                         </div>
-                        
+
                         <!-- Submit Button -->
                         <button type="submit"
                             class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
@@ -473,22 +483,27 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">FREQUENTLY ASKED <span class="text-blue-900">QUESTIONS</span></h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Find answers to common questions about working with Gridiron Construction.</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">FREQUENTLY ASKED <span
+                        class="text-blue-900">QUESTIONS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Find answers to common questions about working with Gridiron
+                    Construction.</p>
             </div>
-            
+
             <div class="max-w-3xl mx-auto">
                 <!-- FAQ Item 1 -->
                 <div class="faq-item animate-fade-in delay-100">
                     <button class="faq-toggle">
-                        <h3 class="text-xl font-semibold text-gray-800 text-left">How soon can you start a new project?</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 text-left">How soon can you start a new project?
+                        </h3>
                         <i class="fas fa-chevron-down text-blue-900 faq-icon"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="text-gray-600">Our start timeline varies depending on project scope and current workload. Typically, we can begin most projects within 2-4 weeks of contract signing. For urgent projects, we offer expedited scheduling options.</p>
+                        <p class="text-gray-600">Our start timeline varies depending on project scope and current
+                            workload. Typically, we can begin most projects within 2-4 weeks of contract signing. For
+                            urgent projects, we offer expedited scheduling options.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 2 -->
                 <div class="faq-item animate-fade-in delay-200">
                     <button class="faq-toggle">
@@ -496,10 +511,12 @@
                         <i class="fas fa-chevron-down text-blue-900 faq-icon"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="text-gray-600">We primarily serve the metropolitan area and surrounding counties. For projects outside our standard service area, we may charge a travel fee or can recommend trusted partners in your location.</p>
+                        <p class="text-gray-600">We primarily serve the metropolitan area and surrounding counties. For
+                            projects outside our standard service area, we may charge a travel fee or can recommend
+                            trusted partners in your location.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 3 -->
                 <div class="faq-item animate-fade-in delay-300">
                     <button class="faq-toggle">
@@ -507,21 +524,26 @@
                         <i class="fas fa-chevron-down text-blue-900 faq-icon"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="text-gray-600">Yes, we provide free, no-obligation estimates for all projects. For complex projects requiring extensive planning, we may charge a consultation fee that gets credited toward your project if you choose to work with us.</p>
+                        <p class="text-gray-600">Yes, we provide free, no-obligation estimates for all projects. For
+                            complex projects requiring extensive planning, we may charge a consultation fee that gets
+                            credited toward your project if you choose to work with us.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 4 -->
                 <div class="faq-item animate-fade-in delay-400">
                     <button class="faq-toggle">
-                        <h3 class="text-xl font-semibold text-gray-800 text-left">What payment methods do you accept?</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 text-left">What payment methods do you accept?
+                        </h3>
                         <i class="fas fa-chevron-down text-blue-900 faq-icon"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="text-gray-600">We accept all major credit cards, checks, bank transfers, and cash. Payment terms vary by project size, with larger projects typically requiring a deposit and progress payments.</p>
+                        <p class="text-gray-600">We accept all major credit cards, checks, bank transfers, and cash.
+                            Payment terms vary by project size, with larger projects typically requiring a deposit and
+                            progress payments.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 5 -->
                 <div class="faq-item animate-fade-in delay-500">
                     <button class="faq-toggle">
@@ -529,7 +551,9 @@
                         <i class="fas fa-chevron-down text-blue-900 faq-icon"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="text-gray-600">Absolutely. Gridiron Construction is fully licensed (#1234567) and carries comprehensive general liability insurance, workers' compensation, and builder's risk insurance. We'd be happy to provide certificates upon request.</p>
+                        <p class="text-gray-600">Absolutely. Gridiron Construction is fully licensed (#1234567) and
+                            carries comprehensive general liability insurance, workers' compensation, and builder's risk
+                            insurance. We'd be happy to provide certificates upon request.</p>
                     </div>
                 </div>
             </div>
@@ -605,19 +629,27 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Mobile Services dropdown toggle
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdown = button.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+
         // FAQ toggle functionality with smooth animations
         document.querySelectorAll('.faq-toggle').forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const faqItem = toggle.closest('.faq-item');
                 const content = faqItem.querySelector('.faq-content');
                 const icon = faqItem.querySelector('.faq-icon');
-                
+
                 // Toggle active class on content
                 content.classList.toggle('active');
-                
+
                 // Toggle icon rotation
                 icon.classList.toggle('active');
-                
+
                 // Close other FAQs
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem) {
@@ -632,7 +664,7 @@
         function initMap() {
             // Coordinates for the map center (replace with your actual address)
             const location = { lat: 33.10066661497993, lng: -96.73424190225575 };
-            
+
             // Create the map
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 14,
@@ -817,7 +849,7 @@
                     }
                 ]
             });
-            
+
             // Add a marker
             new google.maps.Marker({
                 position: location,
@@ -842,25 +874,25 @@
         window.addEventListener('DOMContentLoaded', () => {
             // Load Google Maps
             loadGoogleMaps();
-            
+
             // Add animation classes when elements come into view
             const animateOnScroll = () => {
                 const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-left, .animate-slide-right');
-                
+
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
                     const windowHeight = window.innerHeight;
-                    
+
                     if (elementPosition < windowHeight - 100) {
                         element.style.opacity = '1';
                         element.style.transform = 'translate(0)';
                     }
                 });
             };
-            
+
             // Run once on page load
             animateOnScroll();
-            
+
             // Run on scroll
             window.addEventListener('scroll', animateOnScroll);
         });

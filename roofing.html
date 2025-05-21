@@ -651,6 +651,14 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Mobile Services dropdown toggle
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdown = button.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
