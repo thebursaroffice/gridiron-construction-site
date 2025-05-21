@@ -246,8 +246,8 @@
     </style>
 </head>
 <script>
-  // Example: disable right-click
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
+    // Example: disable right-click
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
 </script>
 
 
@@ -258,7 +258,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#home">
+                    <a href="index.html">
                         <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo" class="h-40 object-contain">
                     </a>
                 </div>
@@ -266,9 +266,9 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home"
+                        <a href="index.html"
                             class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Home</a>
-                        <a href="#about"
+                        <a href="index.html#about"
                             class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">About</a>
 
                         <!-- Services Dropdown -->
@@ -310,9 +310,9 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home"
+                <a href="index.html"
                     class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Home</a>
-                <a href="#about"
+                <a href="index.html#about"
                     class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">About</a>
 
                 <!-- Mobile Services Dropdown -->
@@ -332,7 +332,7 @@
 
                 <a href="#projects"
                     class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Projects</a>
-                <a href="#contact"
+                <a href="#contact-us.html"
                     class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Contact</a>
             </div>
         </div>
@@ -530,31 +530,32 @@
                             <input type="text" id="name"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Email Field -->
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
                             <input type="email" id="email"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Phone Field -->
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
                             <input type="tel" id="phone"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Subject Field -->
                         <div class="mb-6">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
                             <input type="text" id="subject"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        
+
                         <!-- Service Dropdown -->
                         <div class="mb-6 form-dropdown">
-                            <label for="service" class="block text-gray-700 font-medium mb-2">How can we help you?</label>
+                            <label for="service" class="block text-gray-700 font-medium mb-2">How can we help
+                                you?</label>
                             <select id="service" class="w-full">
                                 <option value="" disabled selected>Select a service</option>
                                 <option value="roofing">Roofing</option>
@@ -564,14 +565,14 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        
+
                         <!-- Project Details -->
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
                             <textarea id="message" rows="5"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
-                        
+
                         <!-- Submit Button -->
                         <button type="submit"
                             class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
@@ -710,4 +711,5 @@
     </script>
 
 </body>
+
 </html>
