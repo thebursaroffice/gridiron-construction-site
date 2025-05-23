@@ -266,9 +266,9 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html"
+                        <a href="#home"
                             class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Home</a>
-                        <a href="index.html#about"
+                        <a href="#about"
                             class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">About</a>
 
                         <!-- Services Dropdown -->
@@ -279,10 +279,9 @@
                             </button>
                             <div class="dropdown-content">
                                 <a href="#services">All Services</a>
-                                <a href="roofing.html">Roofing</a>
-                                <a href="development.html">Development</a>
-                                <a href="concrete.html">Concrete</a>
-                                <a href="fencing.html">Fencing</a>
+                                <a href="acquisitions.html">Acquisitions</a>
+                                <a href="construction-services.html">Construction Services</a>
+                                <a href="#development">Development</a>
                             </div>
                         </div>
 
@@ -310,9 +309,9 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html"
+                <a href="#home"
                     class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Home</a>
-                <a href="index.html#about"
+                <a href="#about"
                     class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">About</a>
 
                 <!-- Mobile Services Dropdown -->
@@ -321,12 +320,11 @@
                         class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100 flex items-center justify-between mobile-dropdown-toggle">
                         Services <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div class="mobile-dropdown-content">
+                    <div class="dropdown-content">
                         <a href="#services">All Services</a>
-                        <a href="roofing.html">Roofing</a>
-                        <a href="development.html">Development</a>
-                        <a href="conrete.html">Concrete</a>
-                        <a href="fencing.html">Fencing</a>
+                        <a href="acquisitions.html">Acquisitions</a>
+                        <a href="construction-services.html">Construction Services</a>
+                        <a href="#development">Development</a>
                     </div>
                 </div>
 
@@ -383,13 +381,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                 <div class="mb-12 lg:mb-0 animate-slide-left">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">ABOUT <span class="text-blue-600">GRIDIRON
-                            CONSTRUCTION</span></h2>
-                    <p class="text-gray-600 mb-6">Gridiron Construction is a fresh, innovative construction company
-                        founded by industry veterans with decades of combined experience.</p>
-                    <p class="text-gray-600 mb-8">We bring a new approach to construction, combining time-tested methods
-                        with cutting-edge technology and sustainable practices. Our team is committed to delivering
-                        exceptional quality from groundbreaking to final walkthrough.</p>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">What We Build, <span class="text-blue-600">How we
+                            Lead</span></h2>
+                    <p class="text-gray-600 mb-6">Gridiron Construction is a forward-thinking development company
+                        committed to building the next generation of cost-effective, high-quality residential homes and
+                        small multi-family complexes. Our experienced team brings expertise in both ground-up
+                        construction and residential and commercial renovations.</p>
+                    <p class="text-gray-600 mb-8">At the core of our approach is a culture of innovation, adaptability,
+                        and integrity. From day one, we’ve prioritized accountability and client satisfaction,
+                        consistently delivering solutions tailored to the unique challenges of each project—regardless
+                        of size, location, or complexity. Our success is built on trust, performance, and a relentless
+                        commitment to excellence.
+                    </p>
                     <a href="#" class="learn-more font-bold hover:underline">LEARN MORE <i
                             class="fas fa-arrow-right ml-2"></i></a>
                 </div>
@@ -404,61 +407,58 @@
         </div>
     </section>
 
-    <!-- Services Section - Updated with Roofing, Development, Concrete, and Fencing -->
+    <!-- Services Section - Updated with Acquisitions, Construction Services, and Development -->
     <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
                         class="text-blue-600">SERVICES</span></h2>
-                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Comprehensive construction
-                    solutions tailored to meet your specific needs and exceed your expectations.</p>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">
+                    Comprehensive real estate and construction solutions designed to bring your vision to life.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Acquisitions -->
                 <div
                     class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
                     <div class="text-blue-900 mb-4">
-                        <i class="fas fa-home text-4xl"></i>
+                        <i class="fas fa-map text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Roofing</h3>
-                    <p class="text-gray-600 mb-6">Expert roofing solutions for residential and commercial properties,
-                        including installation, repair, and maintenance of all roofing types.</p>
-                    <a href="roofing.html" class="learn-more font-bold hover:underline">LEARN MORE <i
-                            class="fas fa-arrow-right ml-2"></i></a>
-
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Acquisitions</h3>
+                    <p class="text-gray-600 mb-6">
+                        Whether it’s raw, underutilized, or ready for redevelopment, our acquisitions team delivers fast
+                        evaluations, fair offers, and a streamlined closing process.
+                    </p>
+                    <a href="acquisitions.html" class="learn-more font-bold hover:underline">LEARN MORE
+                        <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
+                <!-- Construction Services -->
                 <div
                     class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
                     <div class="text-blue-900 mb-4">
-                        <i class="fas fa-building text-4xl"></i>
+                        <i class="fas fa-hard-hat text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Development</h3>
-                    <p class="text-gray-600 mb-6">Full-service property development from concept to completion,
-                        including land acquisition, planning, and construction management.</p>
-                    <a href="development.html" class="learn-more font-bold hover:underline">LEARN MORE <i
-                            class="fas fa-arrow-right ml-2"></i></a>
-
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Construction Services</h3>
+                    <p class="text-gray-600 mb-6">
+                        We offer full-service property development — from concept to completion, our experienced team
+                        guides you through every phase, including planning, permitting, construction, and marketing.
+                    </p>
+                    <a href="construction-services.html" class="learn-more font-bold hover:underline">LEARN MORE
+                        <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
+                <!-- Developmemt -->
                 <div
                     class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
                     <div class="text-blue-900 mb-4">
-                        <i class="fas fa-hard-hat text-4xl"></i>
+                        <i class="fas fa-city text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Concrete</h3>
-                    <p class="text-gray-600 mb-6">Professional concrete services including foundations, driveways,
-                        patios, and decorative concrete work for any project.</p>
-                    <a href="#" class="learn-more font-bold hover:underline">LEARN MORE <i
-                            class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div
-                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-500">
-                    <div class="text-blue-900 mb-4">
-                        <i class="fas fa-border-style text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Fencing</h3>
-                    <p class="text-gray-600 mb-6">Custom fencing solutions including wood, vinyl, chain-link, and
-                        ornamental fencing for residential and commercial properties.</p>
-                    <a href="#" class="learn-more font-bold hover:underline">LEARN MORE <i
-                            class="fas fa-arrow-right ml-2"></i></a>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        Comprehensive exterior services including expert roofing, concrete, and fencing solutions for
+                        residential and commercial properties.
+                    </p>
+                    <a href="development.html" class="learn-more font-bold hover:underline">LEARN MORE
+                        <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
         </div>

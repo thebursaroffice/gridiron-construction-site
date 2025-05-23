@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Services | Gridiron Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .orange-tint {
+            background: linear-gradient(to top, rgba(234, 88, 12, 0.7), transparent);
+        }
+
+        .fencing-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .roofing-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .concrete-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .service-card {
+            border-left: 4px solid #ea580c;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #ea580c;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffedd5;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile dropdown styles */
+        .mobile-dropdown-content {
+            display: none;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #ea580c;
+            text-decoration: none;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-content {
+            display: block;
+        }
+
+        /* Form dropdown styles */
+        .form-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-dropdown select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background-color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        .form-dropdown::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #6b7280;
+        }
+
+        /* Fence type selector */
+        .fence-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .fence-option {
+            width: 120px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .fence-option img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .fence-option p {
+            margin-top: 8px;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .fence-option:hover img {
+            border-color: #ea580c;
+            transform: translateY(-5px);
+        }
+
+        .fence-option.active img {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fence material tabs */
+        .material-tabs {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .material-tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .material-tab:hover {
+            color: #ea580c;
+        }
+
+        .material-tab.active {
+            color: #ea580c;
+            border-bottom-color: #ea580c;
+        }
+
+        .material-content {
+            display: none;
+        }
+
+        .material-content.active {
+            display: block;
+        }
+
+        /* Service tabs */
+        .service-tab {
+            position: relative;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            /* gray */
+            transition: color 0.3s ease;
+        }
+
+        .service-tab:hover {
+            color: #ea580c;
+            /* orange */
+        }
+
+        .service-tab.active {
+            color: #ea580c;
+            /* orange text */
+        }
+
+        .service-tab.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 3px;
+            background-color: #ea580c;
+            /* orange underline */
+            border-radius: 2px;
+        }
+
+
+        /* Roofing specific styles */
+        .roof-type-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .roof-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Concrete specific styles */
+        .concrete-application-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .concrete-application-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Foe scrolling when user clicks a tabs */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home">
+                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo" class="h-40 object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Home</a>
+                        <a href="index.html#about"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">About</a>
+
+                        <!-- Services Dropdown -->
+                        <div class="dropdown">
+                            <button
+                                class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition flex items-center">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#services">All Services</a>
+                                <a href="acquisitions.html">Acquisitions</a>
+                                <a href="construction-services.html">Construction Services</a>
+                                <a href="#development">Development</a>
+                            </div>
+                        </div>
+
+                        <a href="#projects"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Projects</a>
+                        <a href="contact-us.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button
+                        class="mobile-menu-button p-2 rounded-md text-orange-600 hover:text-orange-800 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Home</a>
+                <a href="index.html#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">About</a>
+
+                <!-- Mobile Services Dropdown -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100 flex items-center justify-between mobile-dropdown-toggle">
+                        Services <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="#services">All Services</a>
+                        <a href="acquisitions.html">Acquisitions</a>
+                        <a href="constructions-serivces.html">Construction Services</a>
+                        <a href="#development">Development</a>
+                    </div>
+                </div>
+
+                <a href="#projects"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Projects</a>
+                <a href="contact-us.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Tabs -->
+    <div class="sticky top-[80px] z-40 bg-white border-b shadow-sm">
+        <div class="service-tabs max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-6">
+                <a href="#roofing" class="service-tab active">Roofing</a>
+                <a href="#concrete" class="service-tab">Concrete</a>
+                <a href="#fencing" class="service-tab">Fencing</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Roofing Hero Section -->
+    <section id="roofing" class="pt-32 pb-20 roofing-hero text-white parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">PREMIUM <span
+                        class="text-blue-300">ROOFING SOLUTIONS</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">Expert roofing
+                    installations, repairs, and maintenance to protect your property.</p>
+                <div class="animate-fade-in delay-300">
+                    <a href="#contact"
+                        class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">GET
+                        A FREE ESTIMATE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Types Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">ROOFING SOLUTIONS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">We specialize in all types of
+                    roofing materials and systems for residential and commercial properties.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Asphalt Shingles</h3>
+                    <p class="text-gray-600 mb-6">The most popular residential roofing material offering durability,
+                        affordability, and a variety of style options.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>30+ year lifespan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Wide range of colors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Cost-effective</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Metal Roofing</h3>
+                    <p class="text-gray-600 mb-6">Premium roofing solution offering exceptional durability, energy
+                        efficiency, and modern aesthetics.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>50+ year lifespan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Energy efficient</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Fire resistant</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-warehouse text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Flat Roof Systems</h3>
+                    <p class="text-gray-600 mb-6">Specialized solutions for commercial and modern residential
+                        properties
+                        with flat or low-slope roofs.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>EPDM, TPO, and modified bitumen</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Excellent waterproofing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>UV resistant</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">OUR <span class="text-blue-600">ROOFING
+                            PROCESS</span></h2>
+                    <p class="text-gray-600 mb-8">At Gridiron Construction, we follow a meticulous process to ensure
+                        your roofing project is completed to the highest standards.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Consultation & Inspection</h4>
+                                <p class="text-gray-600">We begin with a thorough inspection of your existing roof
+                                    and
+                                    discuss your needs and budget.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Material Selection</h4>
+                                <p class="text-gray-600">We help you choose the best roofing materials for your
+                                    climate,
+                                    budget, and aesthetic preferences.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Professional Installation</h4>
+                                <p class="text-gray-600">Our certified roofers install your new roof with precision
+                                    and
+                                    attention to detail.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                4
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Final Inspection & Warranty</h4>
+                                <p class="text-gray-600">We conduct a final quality check and provide comprehensive
+                                    warranty information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-100">
+                    <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
+                        <img src="https://images.unsplash.com/photo-1605268418331-e117e798218c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Roofing installation" class="w-full h-auto">
+                        <div class="absolute inset-0 orange-tint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">WHY CHOOSE <span
+                        class="text-blue-600">OUR ROOFING SERVICES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">We go above and beyond to
+                    deliver
+                    roofing solutions that stand the test of time.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-award text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Certified Roofers</h3>
+                    <p class="text-gray-600">Our team consists of factory-trained and certified roofing
+                        professionals
+                        with extensive experience.</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Quality Materials</h3>
+                    <p class="text-gray-600">We use only premium roofing materials from trusted manufacturers with
+                        strong warranties.</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Timely Completion</h3>
+                    <p class="text-gray-600">We respect your time and complete projects efficiently without
+                        compromising
+                        quality.</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-500">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-hand-holding-usd text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Fair Pricing</h3>
+                    <p class="text-gray-600">We offer competitive pricing with no hidden costs and provide detailed
+                        written estimates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Gallery Section 
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">ROOFING PROJECTS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">View examples of our completed
+                    roofing projects for residential and commercial clients.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-fade-in delay-200">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Residential roofing" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Residential Shingle Roof</h3>
+                                <p class="text-blue-200">Modern asphalt shingle installation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Metal roofing" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Metal Roof Installation</h3>
+                                <p class="text-blue-200">Standing seam metal roof</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Commercial roofing" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Commercial Flat Roof</h3>
+                                <p class="text-blue-200">TPO membrane installation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Concrete Hero Section -->
+    <section id="concrete" class="pt-32 pb-20 concrete-hero text-white parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">EXPERT <span
+                        class="text-blue-300">CONCRETE SOLUTIONS</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">Professional
+                    concrete
+                    work for driveways, patios, foundations, and more.</p>
+                <div class="animate-fade-in delay-300">
+                    <a href="#contact"
+                        class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">GET
+                        A FREE ESTIMATE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concrete Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">CONCRETE SERVICES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Comprehensive concrete
+                    solutions
+                    for every project need.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Residential Concrete</h3>
+                    <p class="text-gray-600 mb-6">Quality concrete work for homes and residential properties.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Driveways & Walkways</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Patios & Pool Decks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Foundations & Slabs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Stamped & Decorative</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Commercial Concrete</h3>
+                    <p class="text-gray-600 mb-6">Durable concrete solutions for commercial properties.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Parking Lots & Garages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Sidewalks & Curbs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Retail & Office Spaces</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Industrial Flooring</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-industry text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Specialty Concrete</h3>
+                    <p class="text-gray-600 mb-6">Advanced concrete applications for specialized needs.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Polished Concrete Floors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Stained & Colored Concrete</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Concrete Repair & Restoration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Concrete Cutting & Drilling</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gray-50 concrete-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">WHY CHOOSE <span class="text-blue-600">GRIDIRON
+                            CONCRETE</span></h2>
+                    <p class="text-gray-600 mb-8">With decades of experience in concrete construction, we deliver
+                        superior results that stand the test of time.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Premium Materials</h4>
+                                <p class="text-gray-600">We use only the highest quality concrete mixes and
+                                    reinforcement materials.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Expert Craftsmanship</h4>
+                                <p class="text-gray-600">Our skilled craftsmen deliver precision work with attention
+                                    to
+                                    every detail.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Advanced Techniques</h4>
+                                <p class="text-gray-600">Utilizing the latest concrete technologies and installation
+                                    methods.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Durability Guarantee</h4>
+                                <p class="text-gray-600">Our concrete work comes with industry-leading warranties
+                                    for
+                                    your peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-100">
+                    <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
+                        <img src="https://images.unsplash.com/photo-1600673782921-d5396db23893?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Concrete work" class="w-full h-auto">
+                        <div class="absolute inset-0 orange-tint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">CONCRETE PROCESS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">A systematic approach to ensure
+                    quality concrete installation every time.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="animate-fade-in delay-200">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pencil-ruler text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Planning & Design</h3>
+                        <p class="text-gray-600 text-center">Site evaluation, measurements, and design
+                            specifications
+                            tailored to your project.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trowel text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Site Preparation</h3>
+                        <p class="text-gray-600 text-center">Proper excavation, grading, and base preparation for
+                            optimal concrete performance.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-truck-pickup text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Concrete Placement</h3>
+                        <p class="text-gray-600 text-center">Precision pouring and placement using professional
+                            techniques and equipment.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-500">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-check-circle text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Finishing & Curing</h3>
+                        <p class="text-gray-600 text-center">Expert finishing touches and proper curing for maximum
+                            strength and durability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fencing Hero Section -->
+    <section id="fencing" class="pt-32 pb-20 fencing-hero text-white parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">EXPERT <span
+                        class="text-blue-300">FENCING SOLUTIONS</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">Premium fencing
+                    installations for security, privacy, and aesthetic appeal.</p>
+                <div class="animate-fade-in delay-300">
+                    <a href="#contact"
+                        class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">GET
+                        A FREE ESTIMATE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fencing Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">FENCING SERVICES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Comprehensive fencing solutions
+                    tailored to your property's needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Residential Fencing</h3>
+                    <p class="text-gray-600 mb-6">Beautiful and durable fencing solutions for homes.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Privacy Fences</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Decorative Fences</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Pool Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Pet-Friendly Fencing</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Commercial Fencing</h3>
+                    <p class="text-gray-600 mb-6">Secure fencing solutions for businesses and properties.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Security Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Chain Link Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Perimeter Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Access Control Gates</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Specialty Fencing</h3>
+                    <p class="text-gray-600 mb-6">Custom fencing solutions for unique requirements.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Ornamental Iron Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Vinyl Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Farm & Ranch Fencing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Custom Design Fencing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fence Type Selector -->
+    <section class="py-16 bg-gray-50 wood-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">EXPLORE <span
+                        class="text-blue-600">FENCE TYPES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Select a fence type to learn
+                    more
+                    about its features and benefits.</p>
+            </div>
+
+            <div class="fence-selector animate-fade-in delay-200">
+                <div class="fence-option" data-type="wood">
+                    <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Wood Fence">
+                    <p>Wood Fencing</p>
+                </div>
+                <div class="fence-option" data-type="vinyl">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Vinyl Fence">
+                    <p>Vinyl Fencing</p>
+                </div>
+                <div class="fence-option" data-type="chainlink">
+                    <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Chain Link Fence">
+                    <p>Chain Link</p>
+                </div>
+                <div class="fence-option" data-type="aluminum">
+                    <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Aluminum Fence">
+                    <p>Aluminum</p>
+                </div>
+                <div class="fence-option" data-type="wrought">
+                    <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Wrought Iron Fence">
+                    <p>Wrought Iron</p>
+                </div>
+            </div>
+
+            <div id="fence-info" class="mt-12 bg-white p-8 rounded-xl shadow-md animate-fade-in delay-300">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-blue-900">Select a fence type to view details</h3>
+                    <p class="text-gray-600 mt-2">Click on any fence type above to learn about its features,
+                        benefits,
+                        and maintenance requirements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Material Comparison Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">FENCE <span
+                        class="text-blue-600">MATERIAL COMPARISON</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Compare different fencing
+                    materials
+                    to find the perfect fit for your property.</p>
+            </div>
+
+            <div class="animate-fade-in delay-200">
+                <div class="material-tabs">
+                    <div class="material-tab active" data-tab="wood">Wood</div>
+                    <div class="material-tab" data-tab="vinyl">Vinyl</div>
+                    <div class="material-tab" data-tab="aluminum">Aluminum</div>
+                    <div class="material-tab" data-tab="chainlink">Chain Link</div>
+                    <div class="material-tab" data-tab="wrought">Wrought Iron</div>
+                </div>
+
+                <div class="material-content active" id="wood-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Wood Fencing</h3>
+                            <p class="text-gray-600 mb-4">Classic and natural-looking fencing option that offers
+                                privacy
+                                and can be customized with various stains and paints.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                    <span><strong>Pros:</strong> Natural appearance, customizable, good
+                                        privacy</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                    <span><strong>Cons:</strong> Requires regular maintenance, susceptible to rot
+                                        and
+                                        pests</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-dollar-sign text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>Cost:</strong> $$ (Moderate)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-yellow-500 mt-1 mr-2"></i>
+                                    <span><strong>Lifespan:</strong> 10-15 years with proper maintenance</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Wood Fence" class="rounded-lg shadow-md w-full max-w-md">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-content" id="vinyl-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Vinyl Fencing</h3>
+                            <p class="text-gray-600 mb-4">Low-maintenance fencing option that resists weathering and
+                                comes in various styles and colors.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                    <span><strong>Pros:</strong> No painting/staining needed, durable, easy to
+                                        clean</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                    <span><strong>Cons:</strong> Higher initial cost, can become brittle in extreme
+                                        cold</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-dollar-sign text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>Cost:</strong> $$$ (Higher)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-yellow-500 mt-1 mr-2"></i>
+                                    <span><strong>Lifespan:</strong> 20-30 years</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Vinyl Fence" class="rounded-lg shadow-md w-full max-w-md">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional material content would go here -->
+                <div class="material-content" id="aluminum-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Aluminum Fencing</h3>
+                            <p class="text-gray-600 mb-4">Sleek and rust-resistant fencing ideal for decorative or
+                                pool
+                                enclosures, offering a modern look with minimal upkeep.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                    <span><strong>Pros:</strong> Rust-proof, low-maintenance, stylish
+                                        appearance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                    <span><strong>Cons:</strong> Less privacy, may dent or bend under impact</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-dollar-sign text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>Cost:</strong> $$$ (Moderate to High)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-yellow-500 mt-1 mr-2"></i>
+                                    <span><strong>Lifespan:</strong> 20+ years</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1617211456592-fb4104e5e715?auto=format&fit=crop&w=2070&q=80"
+                                alt="Aluminum Fence" class="rounded-lg shadow-md w-full max-w-md">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-content" id="chainlink-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Chain Link Fencing</h3>
+                            <p class="text-gray-600 mb-4">Affordable and durable fencing that offers basic security
+                                and
+                                visibility, often used in commercial or utility areas.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                    <span><strong>Pros:</strong> Cost-effective, durable, low maintenance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                    <span><strong>Cons:</strong> Offers little privacy, industrial appearance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-dollar-sign text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>Cost:</strong> $ (Low)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-yellow-500 mt-1 mr-2"></i>
+                                    <span><strong>Lifespan:</strong> 15-20 years</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1621314326995-c9874b301251?auto=format&fit=crop&w=2070&q=80"
+                                alt="Chain Link Fence" class="rounded-lg shadow-md w-full max-w-md">
+                        </div>
+                    </div>
+                </div>
+                <div class="material-content" id="wrought-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Wrought Iron Fencing</h3>
+                            <p class="text-gray-600 mb-4">Premium fencing option that combines strength, elegance,
+                                and
+                                timeless design. Ideal for securing properties with a touch of sophistication.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                    <span><strong>Pros:</strong> Extremely durable, high security, ornate
+                                        appearance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                    <span><strong>Cons:</strong> Expensive, prone to rust if not maintained</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-dollar-sign text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>Cost:</strong> $$$$ (High)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-yellow-500 mt-1 mr-2"></i>
+                                    <span><strong>Lifespan:</strong> 30+ years with maintenance</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1574118496238-d09f30711e1d?auto=format&fit=crop&w=2070&q=80"
+                                alt="Wrought Iron Fence" class="rounded-lg shadow-md w-full max-w-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">WHY CHOOSE <span class="text-blue-600">GRIDIRON
+                            FENCING</span></h2>
+                    <p class="text-gray-600 mb-8">With decades of experience in fencing installation, we deliver
+                        superior results that enhance your property's security and curb appeal.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Premium Materials</h4>
+                                <p class="text-gray-600">We use only the highest quality fencing materials from
+                                    trusted
+                                    manufacturers.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Expert Installation</h4>
+                                <p class="text-gray-600">Our skilled craftsmen ensure precise, durable installations
+                                    that stand the test of time.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Custom Solutions</h4>
+                                <p class="text-gray-600">We tailor each fencing project to your specific needs and
+                                    property requirements.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Warranty Protection</h4>
+                                <p class="text-gray-600">Our fencing work comes with industry-leading warranties for
+                                    your peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-100">
+                    <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
+                        <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Fence installation" class="w-full h-auto">
+                        <div class="absolute inset-0 orange-tint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">FENCING PROCESS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">A systematic approach to ensure
+                    quality fencing installation every time.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="animate-fade-in delay-200">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pencil-ruler text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Consultation</h3>
+                        <p class="text-gray-600 text-center">We assess your needs, property layout, and local
+                            regulations to plan your perfect fence.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-ruler-combined text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Measurement</h3>
+                        <p class="text-gray-600 text-center">Precise measurements ensure proper materials ordering
+                            and
+                            accurate installation.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Installation</h3>
+                        <p class="text-gray-600 text-center">Our team professionally installs your fence with
+                            attention
+                            to every detail.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-500">
+                    <div class="service-card bg-gray-50 p-6 rounded-lg h-full">
+                        <div
+                            class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-check-circle text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2 text-center">Final Inspection</h3>
+                        <p class="text-gray-600 text-center">We conduct a thorough quality check and walk you
+                            through
+                            the finished project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section 
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">FENCING WORK</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Showcasing our expertise through
+                    completed fencing projects.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-fade-in delay-200">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Residential wood fence" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Lakeside Residence</h3>
+                                <p class="text-blue-200">Privacy wood fencing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-300">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Commercial chain link fence" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Industrial Park</h3>
+                                <p class="text-blue-200">Commercial chain link fencing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-64">
+                        <img src="https://images.unsplash.com/photo-1600566752229-250d0a043586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Ornamental iron fence" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Historic District</h3>
+                                <p class="text-blue-200">Ornamental iron fencing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 animate-fade-in delay-500">
+                <a href="#"
+                    class="inline-block border-2 border-blue-900 hover:bg-blue-900 hover:text-white text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300">VIEW
+                    ALL PROJECTS</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6 animate-fade-in">READY TO START YOUR PROJECT?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Get a free estimate for your
+                roofing,
+                concrete, or fencing project from Gridiron Construction.</p>
+            <div class="animate-fade-in delay-200">
+                <a href="#contact"
+                    class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 mr-4 mb-4">GET
+                    A FREE QUOTE</a>
+                <a href="tel:+14696568382"
+                    class="inline-block border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">CALL
+                    NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <div class="text-center mb-16 animate-slide-left w-full">
+                    <h2 class="text-6xl font-bold text-blue-900 mb-6">CONTACT <span class="text-blue-600">US</span>
+                    </h2>
+                </div>
+                <div class="animate-slide-right w-full max-w-2xl">
+                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <!-- Name Field -->
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Service Dropdown 
+                        <div class="mb-6 form-dropdown">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">How can we help you?</label>
+                            <select id="service" class="w-full">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="roofing">Roofing</option>
+                                <option value="development">Development</option>
+                                <option value="concrete">Concrete</option>
+                                <option value="fencing">Fencing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div> -->
+
+                        <!-- Project Details -->
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Project
+                                Details</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                            SUBMIT REQUEST
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hammer text-white text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">GRIDIRON <span class="text-blue-300">CONSTRUCTION</span></span>
+                    </div>
+                    <p class="text-blue-200 mb-4">Building the future with excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Development</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Roofing</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Concrete</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Fencing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-blue-200 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Our Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-200">
+                <p>&copy; 2025 Gridiron Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const serviceTabs = document.querySelectorAll('.service-tab');
+
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                const id = this.getAttribute('href');
+                const target = document.querySelector(id);
+
+                // Scroll with offset
+                if (target) {
+                    const offset = 80;
+                    const topPos = target.offsetTop - offset;
+                    window.scrollTo({ top: topPos, behavior: 'smooth' });
+                }
+
+                // Update active tab
+                serviceTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile Services dropdown toggle
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdown = button.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Fence type selector functionality
+        const fenceOptions = document.querySelectorAll('.fence-option');
+        const fenceInfo = document.getElementById('fence-info');
+
+        const fenceTypeInfo = {
+            'wood': {
+                title: 'Wood Fencing',
+                description: 'Classic and natural-looking fencing option that offers privacy and can be customized with various stains and paints.',
+                pros: ['Natural appearance', 'Customizable', 'Good privacy'],
+                cons: ['Requires maintenance', 'Susceptible to rot/pests'],
+                lifespan: '10-15 years',
+                cost: '$$'
+            },
+            'vinyl': {
+                title: 'Vinyl Fencing',
+                description: 'Low-maintenance fencing option that resists weathering and comes in various styles and colors.',
+                pros: ['No painting needed', 'Durable', 'Easy to clean'],
+                cons: ['Higher initial cost', 'Can become brittle in cold'],
+                lifespan: '20-30 years',
+                cost: '$$$'
+            },
+            'chainlink': {
+                title: 'Chain Link Fencing',
+                description: 'Affordable and durable fencing solution ideal for security and boundary definition.',
+                pros: ['Cost-effective', 'Low maintenance', 'Durable'],
+                cons: ['Limited privacy', 'Industrial appearance'],
+                lifespan: '15-20 years',
+                cost: '$'
+            },
+            'aluminum': {
+                title: 'Aluminum Fencing',
+                description: 'Lightweight yet strong fencing that offers security with an elegant appearance.',
+                pros: ['Rust-resistant', 'Low maintenance', 'Elegant look'],
+                cons: ['Less privacy', 'Higher cost than chain link'],
+                lifespan: '20-30 years',
+                cost: '$$$'
+            },
+            'wrought': {
+                title: 'Wrought Iron Fencing',
+                description: 'Premium fencing option that combines security with ornamental beauty.',
+                pros: ['Extremely durable', 'Elegant appearance', 'Custom designs'],
+                cons: ['Expensive', 'Requires maintenance to prevent rust'],
+                lifespan: '30+ years',
+                cost: '$$$$'
+            }
+        };
+
+        fenceOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                fenceOptions.forEach(opt => opt.classList.remove('active'));
+
+                // Add active class to clicked option
+                option.classList.add('active');
+
+                // Get fence type
+                const fenceType = option.getAttribute('data-type');
+                const info = fenceTypeInfo[fenceType];
+
+                // Update fence info section
+                fenceInfo.innerHTML = `
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-blue-900">${info.title}</h3>
+                        <p class="text-gray-600 mt-2">${info.description}</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-blue-900 mb-2">Advantages</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                ${info.pros.map(pro => `<li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>${pro}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-900 mb-2">Considerations</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                ${info.cons.map(con => `<li class="flex items-start"><i class="fas fa-times text-red-500 mt-1 mr-2"></i><span>${con}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-blue-900 mb-1">Average Lifespan</h4>
+                            <p class="text-gray-600">${info.lifespan}</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-900 mb-1">Relative Cost</h4>
+                            <p class="text-gray-600">${info.cost}</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-md transition duration-300">Get a Quote for ${info.title}</a>
+                    </div>
+                `;
+            });
+        });
+
+        // Material tabs functionality
+        const materialTabs = document.querySelectorAll('.material-tab');
+
+        materialTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                materialTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Get tab content ID
+                const tabId = tab.getAttribute('data-tab');
+
+                // Hide all content
+                document.querySelectorAll('.material-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                // Show selected content
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+
+        // Run once on page load
+        window.addEventListener('load', animateOnScroll);
+
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+
+</html>
