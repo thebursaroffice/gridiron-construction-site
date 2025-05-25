@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisitions | Gridiron Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .orange-tint {
+            background: linear-gradient(to top, rgba(234, 88, 12, 0.7), transparent);
+        }
+
+        .acquisitions-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+        }
+
+        .benefit-card {
+            border-left: 4px solid #ea580c;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: #1e40af;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .process-step:nth-child(1):before {
+            content: '1';
+        }
+        .process-step:nth-child(2):before {
+            content: '2';
+        }
+        .process-step:nth-child(3):before {
+            content: '3';
+        }
+        .process-step:nth-child(4):before {
+            content: '4';
+        }
+
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 2rem;
+            bottom: -2rem;
+            width: 2px;
+            background: #1e40af;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #ea580c;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffedd5;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile dropdown styles */
+        .mobile-dropdown-content {
+            display: none;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #ea580c;
+            text-decoration: none;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-content {
+            display: block;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .why-choose-card:hover {
+            border-top: 4px solid #ea580c;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home">
+                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo" class="h-40 object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Home</a>
+                        <a href="index.html#about"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">About</a>
+
+                        <!-- Services Dropdown -->
+                        <div class="dropdown">
+                            <button
+                                class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition flex items-center">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#services">All Services</a>
+                                <a href="acquisitions.html">Acquisitions</a>
+                                <a href="construction-services.html">Construction Services</a>
+                                <a href="development.html">Development</a>
+                            </div>
+                        </div>
+
+                        <a href="#projects"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Projects</a>
+                        <a href="contact-us.html"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-orange-600 hover:bg-orange-100 hover:text-orange-800 transition">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button
+                        class="mobile-menu-button p-2 rounded-md text-orange-600 hover:text-orange-800 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Home</a>
+                <a href="index.html#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">About</a>
+
+                <!-- Mobile Services Dropdown -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100 flex items-center justify-between mobile-dropdown-toggle">
+                        Services <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="#services">All Services</a>
+                        <a href="roofing.html">Roofing</a>
+                        <a href="development.html">Development</a>
+                        <a href="concrete.html">Concrete</a>
+                        <a href="fencing.html">Fencing</a>
+                    </div>
+                </div>
+
+                <a href="#projects"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Projects</a>
+                <a href="contact-us.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-orange-600 hover:text-orange-800 hover:bg-orange-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 acquisitions-hero text-white parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">STRATEGIC <span
+                        class="text-blue-300">ACQUISITIONS</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200">Whether you're holding onto unimproved land, a distressed property, or a title-defect property, Gridiron Development is your trusted solution for a fast, fair, and reliable sale.</p>
+                <div class="animate-fade-in delay-300">
+                    <a href="#contact"
+                        class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">EXPLORE
+                        OPPORTUNITIES</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Types Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">WE SPECIALIZE IN <span
+                        class="text-blue-600">CHALLENGING PROPERTIES</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">Turning property challenges into opportunities with our specialized acquisition approach.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Unimproved Land Card -->
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-200 benefit-card">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-tree text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">UNIMPROVED LAND</h3>
+                    <p class="text-gray-600 mb-6">If you're sitting on raw land without a plan, Gridiron makes it easy to turn that asset into cash. We purchase land in any condition.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>No development plans needed</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Any location, any size</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Fast closing process</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Competitive cash offers</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Distressed Properties Card -->
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-300 benefit-card">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-house-damage text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">DISTRESSED PROPERTIES</h3>
+                    <p class="text-gray-600 mb-6">A property in poor condition can feel like a burden. At Gridiron, we take on distressed properties exactly as they are.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>No repairs needed</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Fire, flood, or structural damage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Vacant or occupied properties</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Inherited properties welcome</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Title-Defect Properties Card -->
+                <div
+                    class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in delay-400 benefit-card">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-file-contract text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">TITLE-DEFECT PROPERTIES</h3>
+                    <p class="text-gray-600 mb-6">Selling a property with title issues can feel like a dead end — but not with us. We're experienced in navigating complex title problems.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Boundary disputes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Liens or encumbrances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Easement issues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Heirs' property complications</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Gridiron Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">WHY SELLERS <span class="text-blue-600">CHOOSE GRIDIRON</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">We're more than buyers — we're problem solvers. Gridiron Development brings integrity, speed, and experience to every transaction.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md why-choose-card animate-fade-in delay-200">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-handshake text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">INTEGRITY & TRANSPARENCY</h3>
+                    <p class="text-gray-600">Our process is completely transparent with no hidden fees or surprises. We provide honest assessments and fair offers based on market realities.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md why-choose-card animate-fade-in delay-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">SPEED & CERTAINTY</h3>
+                    <p class="text-gray-600">We close quickly, often in as little as 7 days. Our offers come with guaranteed funding - no financing contingencies or last-minute cancellations.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md why-choose-card animate-fade-in delay-400">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-hard-hat text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">EXPERT PROBLEM SOLVING</h3>
+                    <p class="text-gray-600">Whether your property is raw, rundown, or tangled in red tape, we'll handle the hard stuff so you don't have to. Our team specializes in complex situations.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center animate-fade-in delay-500">
+                <p class="text-gray-600 italic max-w-4xl mx-auto">"Our commitment to closing is unmatched. We take pride in helping property owners move forward from challenging situations with dignity and financial security."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acquisition Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4 animate-fade-in">OUR <span
+                        class="text-blue-600">ACQUISITION PROCESS</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto animate-fade-in delay-100">A transparent, structured approach to ensure successful partnerships.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <div class="process-step animate-fade-in delay-200">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Initial Evaluation</h3>
+                        <p class="text-gray-600">We conduct preliminary discussions to understand your property situation, review documentation, and assess the opportunity.</p>
+                    </div>
+                    <div class="process-step animate-fade-in delay-300">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Due Diligence</h3>
+                        <p class="text-gray-600">Comprehensive analysis of property records, condition assessment, and legal matters to validate the opportunity.</p>
+                    </div>
+                    <div class="process-step animate-fade-in delay-400">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Valuation & Offer</h3>
+                        <p class="text-gray-600">We develop a fair market valuation and present a detailed offer with proposed terms and closing timeline.</p>
+                    </div>
+                    <div class="process-step animate-fade-in delay-500">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Closing & Transfer</h3>
+                        <p class="text-gray-600">Efficient handling of all paperwork and legal requirements to complete the transaction smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Criteria Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">PROPERTIES WE <span class="text-blue-600">ACQUIRE</span></h2>
+                    <p class="text-gray-600 mb-8">We specialize in properties that traditional buyers often avoid, providing solutions for owners facing unique challenges.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Unimproved Land</h4>
+                                <p class="text-gray-600">Vacant lots, raw acreage, and undeveloped parcels regardless of zoning or current condition.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Distressed Properties</h4>
+                                <p class="text-gray-600">Homes and buildings needing significant repairs, fire/water damage, or code violations.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Title Issues</h4>
+                                <p class="text-gray-600">Properties with liens, boundary disputes, missing heirs, or other title complications.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Inherited Properties</h4>
+                                <p class="text-gray-600">Properties received through inheritance where multiple parties may be involved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-100">
+                    <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Business handshake" class="w-full h-auto">
+                        <div class="absolute inset-0 orange-tint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6 animate-fade-in">READY TO SELL? LET'S TALK.</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Fill out our quick form or give us a call. We’ll review your property and provide a no-obligation cash offer within 24–48 hours.</p>
+            <div class="animate-fade-in delay-200">
+                <a href="#contact"
+                    class="inline-block bg-white hover:bg-blue-100 text-blue-900 font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 mr-4 mb-4">START
+                    CONVERSATION</a>
+                <a href="tel:+14696568382"
+                    class="inline-block border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105">CALL
+                    OUR TEAM</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <div class="text-center mb-16 w-full">
+                    <h2 class="text-6xl font-bold text-blue-900 mb-6">CONTACT <span class="text-blue-600">OUR ACQUISITIONS TEAM</span></h2>
+                </div>
+                <div class="w-full max-w-2xl">
+                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <!-- Name Field -->
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="mb-6">
+                            <label for="property-type" class="block text-gray-700 font-medium mb-2">Property Type</label>
+                            <select id="property-type" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select property type</option>
+                                <option value="unimproved">Unimproved Land</option>
+                                <option value="distressed">Distressed Property</option>
+                                <option value="title-defect">Title-Defect Property</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Property Location -->
+                        <div class="mb-6">
+                            <label for="location" class="block text-gray-700 font-medium mb-2">Property Location</label>
+                            <input type="text" id="location" placeholder="Address or approximate location"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Property Description -->
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Property Description</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Describe your property including any known issues"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                            SUBMIT PROPERTY DETAILS
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hammer text-white text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">GRIDIRON <span class="text-blue-300">CONSTRUCTION</span></span>
+                    </div>
+                    <p class="text-blue-200 mb-4">Building the future with excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Development</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Roofing</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Concrete</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Fencing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-blue-200 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Our Team</a></li>
+                        <li><a href="acquisitions.html" class="text-blue-200 hover:text-white">Acquisitions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-200">
+                <p>&copy; 2025 Gridiron Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile Services dropdown toggle
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdown = button.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Run once on page load
+        window.addEventListener('load', animateOnScroll);
+
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+
+</html>
