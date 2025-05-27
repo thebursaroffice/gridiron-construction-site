@@ -249,22 +249,28 @@
         .faq-icon.active {
             transform: rotate(180deg);
         }
-        
+
         .business-hours {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             gap: 0.5rem;
+            min-height: 200px;
+            /* Adjust as needed for vertical space */
         }
-        
+
+
         .business-hours div {
             display: flex;
             justify-content: space-between;
         }
-        
+
         .business-hours .day {
             font-weight: 600;
         }
-        
+
         .business-hours .time {
             color: #4b5563;
         }
@@ -322,7 +328,7 @@
                         class="mobile-menu-button p-2 rounded-md text-orange-600 hover:text-orange-800 focus:outline-none">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
-                            <path stroke-linecap="round", stroke-linejoin="round", stroke-width="2"
+                            <path stroke-linecap="round" , stroke-linejoin="round" , stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -407,8 +413,10 @@
     <section class="py-16 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">SEND US A <span class="text-blue-900">MESSAGE</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Fill out the form below and we'll get back to you within 24 hours.</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">SEND US A <span class="text-blue-900">MESSAGE</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Fill out the form below and we'll get back to you within 24
+                    hours.</p>
             </div>
 
             <div class="bg-white p-8 rounded-xl shadow-md mx-auto animate-slide-right">
@@ -436,7 +444,7 @@
 
                     <!-- Service Dropdown -->
                     <div class="mb-6 form-dropdown">
-                        <label for="service", class="block text-gray-700 font-medium mb-2">Service Needed *</label>
+                        <label for="service" , class="block text-gray-700 font-medium mb-2">Service Needed *</label>
                         <select id="service" required class="w-full">
                             <option value="" disabled selected>Select a service</option>
                             <option value="roofing">Roofing</option>
@@ -450,7 +458,7 @@
 
                     <!-- Project Details -->
                     <div class="mb-6">
-                        <label for="message", class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                        <label for="message" , class="block text-gray-700 font-medium mb-2">Project Details *</label>
                         <textarea id="message" rows="5" required
                             class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none"></textarea>
                     </div>
@@ -543,7 +551,7 @@
                             insurance.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 6 - Business Hours -->
                 <div class="faq-item animate-fade-in delay-600">
                     <button class="faq-toggle">
@@ -552,24 +560,19 @@
                     </button>
                     <div class="faq-content">
                         <div class="business-hours">
-                            <div>
+                            <div class="flex justify-between w-full max-w-md">
                                 <span class="day">Monday - Friday</span>
                                 <span class="time">8:00 AM - 5:00 PM</span>
                             </div>
-                            <div>
+                            <div class="flex justify-between w-full max-w-md">
                                 <span class="day">Saturday</span>
-                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <span class="time">Closed</span>
                             </div>
-                            <div>
+                            <div class="flex justify-between w-full max-w-md">
                                 <span class="day">Sunday</span>
                                 <span class="time">Closed</span>
                             </div>
-                            <div>
-                                <span class="day">Emergency Services</span>
-                                <span class="time">24/7</span>
-                            </div>
                         </div>
-                        <p class="text-gray-600 mt-4">For urgent matters outside business hours, please call our emergency line at <a href="tel:+14696568382" class="text-blue-900 font-medium">(469) 656-8382</a>.</p>
                     </div>
                 </div>
             </div>
