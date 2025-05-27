@@ -249,6 +249,25 @@
         .faq-icon.active {
             transform: rotate(180deg);
         }
+        
+        .business-hours {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        
+        .business-hours div {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .business-hours .day {
+            font-weight: 600;
+        }
+        
+        .business-hours .time {
+            color: #4b5563;
+        }
     </style>
 </head>
 <script>
@@ -303,7 +322,7 @@
                         class="mobile-menu-button p-2 rounded-md text-orange-600 hover:text-orange-800 focus:outline-none">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <path stroke-linecap="round", stroke-linejoin="round", stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -356,10 +375,10 @@
         </div>
     </section>
 
-    <!-- Contact Methods Section -->
+    <!-- Contact Methods Section - Now with only 2 cards -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Phone Card -->
                 <div class="bg-white p-8 rounded-lg shadow-md contact-card animate-slide-left delay-100">
                     <div class="text-blue-900 mb-6">
@@ -371,7 +390,7 @@
                 </div>
 
                 <!-- Email Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md contact-card animate-fade-in delay-200">
+                <div class="bg-white p-8 rounded-lg shadow-md contact-card animate-slide-right delay-200">
                     <div class="text-blue-900 mb-6">
                         <i class="fas fa-envelope text-4xl"></i>
                     </div>
@@ -379,16 +398,6 @@
                     <p class="text-gray-600 mb-4">Send us your questions or project details for a prompt response.</p>
                     <a href="mailto:info@gridironconstruction.com"
                         class="text-blue-900 font-bold hover:underline">info@gridironbuilders.com</a>
-                </div>
-
-                <!-- Location Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md contact-card animate-slide-right delay-300">
-                    <div class="text-blue-900 mb-6">
-                        <i class="fas fa-map-marker-alt text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Visit Us</h3>
-                    <p class="text-gray-600 mb-4">Schedule an appointment at our headquarters.</p>
-                    <p class="text-blue-900 font-bold">2300 McDermott Rd,<br>Plano, TX 75025</p>
                 </div>
             </div>
         </div>
@@ -427,20 +436,21 @@
 
                     <!-- Service Dropdown -->
                     <div class="mb-6 form-dropdown">
-                        <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed *</label>
+                        <label for="service", class="block text-gray-700 font-medium mb-2">Service Needed *</label>
                         <select id="service" required class="w-full">
                             <option value="" disabled selected>Select a service</option>
                             <option value="roofing">Roofing</option>
                             <option value="development">Development</option>
                             <option value="concrete">Concrete</option>
                             <option value="fencing">Fencing</option>
+                            <option value="other">I want a cash offer for my Property.</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
 
                     <!-- Project Details -->
                     <div class="mb-6">
-                        <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                        <label for="message", class="block text-gray-700 font-medium mb-2">Project Details *</label>
                         <textarea id="message" rows="5" required
                             class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none"></textarea>
                     </div>
@@ -533,6 +543,35 @@
                             insurance.</p>
                     </div>
                 </div>
+                
+                <!-- FAQ Item 6 - Business Hours -->
+                <div class="faq-item animate-fade-in delay-600">
+                    <button class="faq-toggle">
+                        <h3 class="text-xl font-semibold text-gray-800 text-left">What are your business hours?</h3>
+                        <i class="fas fa-chevron-down text-blue-900 faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="business-hours">
+                            <div>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">8:00 AM - 5:00 PM</span>
+                            </div>
+                            <div>
+                                <span class="day">Saturday</span>
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                            </div>
+                            <div>
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </div>
+                            <div>
+                                <span class="day">Emergency Services</span>
+                                <span class="time">24/7</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4">For urgent matters outside business hours, please call our emergency line at <a href="tel:+14696568382" class="text-blue-900 font-medium">(469) 656-8382</a>.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -585,7 +624,6 @@
                     <h3 class="text-lg font-bold mb-4">Contact</h3>
                     <ul class="space-y-2">
                         <li class="text-gray-400">2300 McDermott Rd, Plano, TX 75025</li>
-                        <!-- <li class="text-gray-400">Building City, BC 12345</li> -->
                         <li class="text-gray-400">Phone: (569) 656-8382</li>
                         <li class="text-gray-400">Email: info@gridironbuilders.com</li>
                     </ul>
@@ -630,7 +668,7 @@
                 // Close other FAQs
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem) {
-                        item.querySelector('.faq-content').classList.remove('active');
+                        item.querySelector('.faq-content').class.classList.remove('active');
                         item.querySelector('.faq-icon').classList.remove('active');
                     }
                 });
