@@ -117,13 +117,6 @@
             color: #6b7280;
         }
 
-        #map {
-            height: 400px;
-            width: 100%;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
         .input-highlight {
             transition: all 0.3s ease;
             border-color: #d1d5db;
@@ -356,7 +349,7 @@
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">CONTACT <span
                         class="text-blue-300">GRIDIRON</span></h1>
                 <p class="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in delay-100">
-                    Have a project in mind or land to sell? Connect with us today — we’re here to provide answers and
+                    Have a project in mind or land to sell? Connect with us today — we're here to provide answers and
                     explore the possibilities.
                 </p>
             </div>
@@ -401,80 +394,63 @@
         </div>
     </section>
 
-    <!-- Map and Form Section -->
+    <!-- Form Section - Centered and Wider -->
     <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Map -->
-                <div class="animate-slide-left">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">OUR <span class="text-blue-900">LOCATION</span>
-                    </h2>
-                    <p class="text-gray-600 mb-8">Our headquarters is conveniently located in the heart of the city with
-                        easy access to major highways.</p>
-                    <div id="map" class="hover-scale"></div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Business Hours</h3>
-                        <p class="text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                        <p class="text-gray-600">Saturday: By appointment</p>
-                        <p class="text-gray-600">Sunday: Closed</p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">SEND US A <span class="text-blue-900">MESSAGE</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md mx-auto animate-slide-right">
+                <form class="w-full">
+                    <!-- Name Field -->
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                        <input type="text" id="name" required
+                            class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
                     </div>
-                </div>
 
-                <!-- Contact Form -->
-                <div class="animate-slide-right">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">SEND US A <span
-                            class="text-blue-900">MESSAGE</span></h2>
-                    <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    <!-- Email Field -->
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                        <input type="email" id="email" required
+                            class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
+                    </div>
 
-                    <form class="bg-white p-8 rounded-xl shadow-md">
-                        <!-- Name Field -->
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
-                            <input type="text" id="name" required
-                                class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
-                        </div>
+                    <!-- Phone Field -->
+                    <div class="mb-6">
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone"
+                            class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
+                    </div>
 
-                        <!-- Email Field -->
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
-                            <input type="email" id="email" required
-                                class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
-                        </div>
+                    <!-- Service Dropdown -->
+                    <div class="mb-6 form-dropdown">
+                        <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed *</label>
+                        <select id="service" required class="w-full">
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="roofing">Roofing</option>
+                            <option value="development">Development</option>
+                            <option value="concrete">Concrete</option>
+                            <option value="fencing">Fencing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-                        <!-- Phone Field -->
-                        <div class="mb-6">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone"
-                                class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none">
-                        </div>
+                    <!-- Project Details -->
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                        <textarea id="message" rows="5" required
+                            class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none"></textarea>
+                    </div>
 
-                        <!-- Service Dropdown -->
-                        <div class="mb-6 form-dropdown">
-                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed *</label>
-                            <select id="service" required class="w-full">
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="roofing">Roofing</option>
-                                <option value="development">Development</option>
-                                <option value="concrete">Concrete</option>
-                                <option value="fencing">Fencing</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <!-- Project Details -->
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
-                            <textarea id="message" rows="5" required
-                                class="w-full px-4 py-3 rounded-lg border input-highlight focus:outline-none"></textarea>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit"
-                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                            SEND MESSAGE
-                        </button>
-                    </form>
-                </div>
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                        SEND MESSAGE
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -513,7 +489,7 @@
                     <div class="faq-content">
                         <p class="text-gray-600">We proudly serve the Dallas–Fort Worth area, covering from Sherman in
                             the north to Hillsboro in the south, and from Royse City in the east to Weatherford in the
-                            west. For projects beyond this region, we’re happy to recommend trusted partners in your
+                            west. For projects beyond this region, we're happy to recommend trusted partners in your
                             area.</p>
                     </div>
                 </div>
@@ -661,221 +637,8 @@
             });
         });
 
-        // Initialize Google Map
-        function initMap() {
-            // Coordinates for the map center (replace with your actual address)
-            const location = { lat: 33.10066661497993, lng: -96.73424190225575 };
-
-            // Create the map
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 14,
-                center: location,
-                styles: [
-                    {
-                        "featureType": "all",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "saturation": 36
-                            },
-                            {
-                                "color": "#333333"
-                            },
-                            {
-                                "lightness": 40
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "all",
-                        "elementType": "labels.text.stroke",
-                        "stylers": [
-                            {
-                                "visibility": "on"
-                            },
-                            {
-                                "color": "#ffffff"
-                            },
-                            {
-                                "lightness": 16
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "all",
-                        "elementType": "labels.icon",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "administrative",
-                        "elementType": "geometry.fill",
-                        "stylers": [
-                            {
-                                "color": "#fefefe"
-                            },
-                            {
-                                "lightness": 20
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "administrative",
-                        "elementType": "geometry.stroke",
-                        "stylers": [
-                            {
-                                "color": "#fefefe"
-                            },
-                            {
-                                "lightness": 17
-                            },
-                            {
-                                "weight": 1.2
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "landscape",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#f5f5f5"
-                            },
-                            {
-                                "lightness": 20
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#f5f5f5"
-                            },
-                            {
-                                "lightness": 21
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#dedede"
-                            },
-                            {
-                                "lightness": 21
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry.fill",
-                        "stylers": [
-                            {
-                                "color": "#ffffff"
-                            },
-                            {
-                                "lightness": 17
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry.stroke",
-                        "stylers": [
-                            {
-                                "color": "#ffffff"
-                            },
-                            {
-                                "lightness": 29
-                            },
-                            {
-                                "weight": 0.2
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.arterial",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#ffffff"
-                            },
-                            {
-                                "lightness": 18
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#ffffff"
-                            },
-                            {
-                                "lightness": 16
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "transit",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#f2f2f2"
-                            },
-                            {
-                                "lightness": 19
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#e9e9e9"
-                            },
-                            {
-                                "lightness": 17
-                            }
-                        ]
-                    }
-                ]
-            });
-
-            // Add a marker
-            new google.maps.Marker({
-                position: location,
-                map: map,
-                title: "Gridiron Construction Headquarters",
-                icon: {
-                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-                }
-            });
-        }
-
-        // Load Google Maps API (replace with your API key)
-        function loadGoogleMaps() {
-            const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBcrSNVa3fCtE3S9tLRYwE-4dLL9GKQ1nk&callback=initMap`;
-            script.defer = true;
-            script.async = true;
-            document.head.appendChild(script);
-        }
-
         // Run when page loads
         window.addEventListener('DOMContentLoaded', () => {
-            // Load Google Maps
-            loadGoogleMaps();
-
             // Add animation classes when elements come into view
             const animateOnScroll = () => {
                 const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-left, .animate-slide-right');
