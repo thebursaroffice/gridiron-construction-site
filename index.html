@@ -243,6 +243,12 @@
             pointer-events: none;
             color: #6b7280;
         }
+
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+            }
+        }
     </style>
 </head>
 <script>
@@ -398,8 +404,7 @@
                 </div>
                 <div class="animate-slide-right">
                     <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
-                        <img src="images/609-main.jpg"
-                            alt="Construction site" class="w-full h-auto">
+                        <img src="images/609-main.jpg" alt="Construction site" class="w-full h-auto">
                         <div class="absolute inset-0 orange-tint"></div>
                     </div>
                 </div>
