@@ -716,32 +716,30 @@
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remove active styles from all buttons
+                    // Reset all button styles
                     filterButtons.forEach(btn => {
                         btn.classList.remove('bg-orange-600', 'text-white');
                         btn.classList.add('bg-gray-200', 'text-gray-700');
                     });
 
-                    // Add active styles to the clicked button
+                    // Highlight active button
                     button.classList.remove('bg-gray-200', 'text-gray-700');
                     button.classList.add('bg-orange-600', 'text-white');
 
+                    // Filter projects
                     const selectedFilter = button.getAttribute('data-filter');
-
                     projectCards.forEach(card => {
                         const category = card.getAttribute('data-category');
-
                         if (selectedFilter === 'ALL' || category === selectedFilter) {
-                            card.style.display = "block";
+                            card.style.display = 'block';
                         } else {
-                            card.style.display = "none";
+                            card.style.display = 'none';
                         }
                     });
                 });
             });
         });
     </script>
-
 
 </body>
 
