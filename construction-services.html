@@ -1045,23 +1045,28 @@
 
             <div class="fence-selector animate-fade-in delay-200">
                 <div class="fence-option" data-type="wood">
-                    <img src="images/unsplash/wood-fence.jpg" alt="Wood Fence">
+                    <img src="images/unsplash/wood-fence.jpg"
+                        alt="Wood Fence">
                     <p>Wood Fencing</p>
                 </div>
                 <div class="fence-option" data-type="vinyl">
-                    <img src="images/unsplash/vinyl-fence.avif" alt="Vinyl Fence">
+                    <img src="images/unsplash/vinyl-fence.avif"
+                        alt="Vinyl Fence">
                     <p>Vinyl Fencing</p>
                 </div>
                 <div class="fence-option" data-type="chainlink">
-                    <img src="images/unsplash/chain-link-fence.avif" alt="Chain Link Fence">
+                    <img src="images/unsplash/chain-link-fence.avif"
+                        alt="Chain Link Fence">
                     <p>Chain Link</p>
                 </div>
                 <div class="fence-option" data-type="aluminum">
-                    <img src="images/unsplash/aluminum-fence.avif" alt="Aluminum Fence">
+                    <img src="images/unsplash/aluminum-fence.avif"
+                        alt="Aluminum Fence">
                     <p>Aluminum</p>
                 </div>
                 <div class="fence-option" data-type="wrought">
-                    <img src="images/unsplash/wrought-iron.avif" alt="Wrought Iron Fence">
+                    <img src="images/unsplash/wrought-iron.avif"
+                        alt="Wrought Iron Fence">
                     <p>Wrought Iron</p>
                 </div>
             </div>
@@ -1369,7 +1374,8 @@
                 </div>
                 <div class="animate-fade-in delay-100">
                     <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
-                        <img src="images/304-fencing.jpg" alt="Fence installation" class="w-full h-auto">
+                        <img src="images/304-fencing.jpg"
+                            alt="Fence installation" class="w-full h-auto">
                         <div class="absolute inset-0 orange-tint"></div>
                     </div>
                 </div>
@@ -1643,14 +1649,8 @@
                 // Scroll with offset
                 if (target) {
                     const offset = 80;
-                    const rect = target.getBoundingClientRect();
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const topPos = rect.top + scrollTop - navbar.offsetHeight;
-
-                    window.scrollTo({
-                        top: topPos,
-                        behavior: 'smooth'
-                    });
+                    const topPos = target.offsetTop - offset;
+                    window.scrollTo({ top: topPos, behavior: 'smooth' });
                 }
 
                 // Update active tab
