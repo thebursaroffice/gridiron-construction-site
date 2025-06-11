@@ -113,11 +113,17 @@
         }
 
         .hover-scale {
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            transform: translateZ(0);
         }
 
         .hover-scale:hover {
-            transform: scale(1.03);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card img {
+            transition: transform 0.5s ease;
         }
 
         .parallax {
@@ -360,8 +366,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card animate-fade-in delay-200" data-category="CONCRETE">
-                    <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-full flex flex-col">
-                        <img src="images/304-concrete.jpeg" alt="Modern Residence" class="w-full h-64 object-cover">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover-scale h-full flex flex-col">
+                        <img src="images/304-concrete.jpeg" alt="Modern Residence" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
                         <div class="p-6 bg-white flex-grow">
                             <div class="text-blue-900 font-bold text-xl py-4">CONCRETE</div>
                         </div>
