@@ -224,6 +224,10 @@
             pointer-events: none;
             color: #6b7280;
         }
+
+        #projects-container {
+            transition: opacity 0.3s ease;
+        }
     </style>
     </style>
 </head>
@@ -363,11 +367,14 @@
 
 
             <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="projects-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500 opacity-100">
                 <!-- Project 1 -->
                 <div class="project-card animate-fade-in delay-200" data-category="CONCRETE">
-                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover-scale h-full flex flex-col">
-                        <img src="images/304-concrete.jpeg" alt="Modern Residence" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                    <div
+                        class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover-scale h-full flex flex-col">
+                        <img src="images/304-concrete.jpeg" alt="Modern Residence"
+                            class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
                         <div class="p-6 bg-white flex-grow">
                             <div class="text-blue-900 font-bold text-xl py-4">CONCRETE</div>
                         </div>
@@ -377,7 +384,8 @@
                 <!-- Project 2 -->
                 <div class="project-card animate-fade-in delay-300" data-category="FENCING">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-full flex flex-col">
-                        <img src="images/304-fencing.jpg" alt="Multi-Family Development" class="w-full h-64 object-cover">
+                        <img src="images/304-fencing.jpg" alt="Multi-Family Development"
+                            class="w-full h-64 object-cover">
                         <div class="p-6 bg-white flex-grow">
                             <div class="text-blue-900 font-bold text-xl py-4">FENCING</div>
                         </div>
@@ -417,7 +425,8 @@
                 <!-- Project 6 -->
                 <div class="project-card animate-fade-in delay-500" data-category="DEVELOPMENT">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-full flex flex-col">
-                        <img src="images/development-project.jpeg" alt="Office Renovation" class="w-full h-64 object-cover">
+                        <img src="images/development-project.jpeg" alt="Office Renovation"
+                            class="w-full h-64 object-cover">
                         <div class="p-6 bg-white flex-grow">
                             <div class="text-blue-900 font-bold text-xl py-4">DEVELOPMENT</div>
                         </div>
@@ -434,16 +443,18 @@
                     </div>
                 </div>
 
-                <!-- Project 7 -->
+                <!-- Project 8 -->
                 <div class="project-card animate-fade-in delay-500" data-category="CONCRETE">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-full flex flex-col">
-                        <img src="images/400_foundation_concrete.jpeg" alt="Office Renovation" class="w-full h-64 object-cover">
+                        <img src="images/400_foundation_concrete.jpeg" alt="Office Renovation"
+                            class="w-full h-64 object-cover">
                         <div class="p-6 bg-white flex-grow">
                             <div class="text-blue-900 font-bold text-xl py-4">CONCRETE</div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Project 9 -->
                 <div class="project-card animate-fade-in delay-500" data-category="ROOFING">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-full flex flex-col">
                         <img src="images/422-main_roofing.jpg" alt="Office Renovation" class="w-full h-64 object-cover">
@@ -453,29 +464,25 @@
                     </div>
                 </div>
 
+                <!-- Project 10 -->
                 <div class="project-card animate-fade-in delay-500" data-category="ROOFING">
                     <div class="relative overflow-hidden rounded-xl shadow-lg hover-scale h-full flex flex-col">
-                        <img src="images/2910-main-roofing.png" alt="Office Renovation" class="w-full h-64 object-cover">
+                        <img src="images/2910-main-roofing.png" alt="Office Renovation"
+                            class="w-full h-64 object-cover">
                         <div class="p-6 bg-white flex-grow">
                             <div class="text-blue-900 font-bold text-xl py-4">ROOFING</div>
                         </div>
                     </div>
                 </div>
-            </div> <!-- do not put projects past this -->
-
+            </div>
 
             <div class="flex justify-center mt-12 animate-fade-in delay-700">
-                <nav class="flex items-center space-x-2">
-                    <button class="px-4 py-2 border border-gray-300 rounded-md bg-orange-600 text-white">
-                        1
-                    </button>
-                    <!-- <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">
-                        2
-                    </button> -->
-                    <!-- <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">
-                        3
-                    </button> -->
-                    <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">
+                <nav class="flex items-center space-x-2" id="pagination">
+                    <button class="page-btn px-4 py-2 border border-gray-300 rounded-md bg-orange-600 text-white"
+                        data-page="1">1</button>
+                    <button class="page-btn px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100"
+                        data-page="2">2</button>
+                    <button id="next-page" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">
                         Next <i class="fas fa-chevron-right ml-1"></i>
                     </button>
                 </nav>
@@ -561,8 +568,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="mb-8 md:mb-0">
                     <div class="mb-4">
-                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo"
-                            class="h-17 object-contain">
+                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo" class="h-17 object-contain">
                     </div>
 
                     <p class="text-blue-200 mb-4">Building the future with excellence.</p>
@@ -578,7 +584,8 @@
                     <ul class="space-y-2">
                         <li><a href="index.html#services" class="text-blue-200 hover:text-white">All Services</a></li>
                         <li><a href="acquisitions.html" class="text-blue-200 hover:text-white">Acquisitions</a></li>
-                        <li><a href="construction-services.html" class="text-blue-200 hover:text-white">Construction Services</a></li>
+                        <li><a href="construction-services.html" class="text-blue-200 hover:text-white">Construction
+                                Services</a></li>
                         <li><a href="development.html" class="text-blue-200 hover:text-white">Development</a></li>
                     </ul>
                 </div>
@@ -726,6 +733,70 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const projectCards = document.querySelectorAll('.project-card');
+            const cardsPerPage = 9;
+            const totalPages = Math.ceil(projectCards.length / cardsPerPage);
+            let currentPage = 1;
+
+            const showPage = (page) => {
+                const start = (page - 1) * cardsPerPage;
+                const end = start + cardsPerPage;
+
+                const container = document.getElementById("projects-container");
+                container.style.opacity = 0;
+
+                setTimeout(() => {
+                    projectCards.forEach((card, index) => {
+                        card.style.display = (index >= start && index < end) ? 'block' : 'none';
+                    });
+
+                    container.style.opacity = 1;
+
+                    // Scroll to top of page smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            };
+
+            // Setup page buttons
+            const pageButtons = document.querySelectorAll('.page-btn');
+            pageButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentPage = parseInt(btn.dataset.page);
+                    showPage(currentPage);
+
+                    // Update button styling
+                    pageButtons.forEach(b => b.classList.remove('bg-orange-600', 'text-white'));
+                    btn.classList.add('bg-orange-600', 'text-white');
+                });
+            });
+
+            // Next button logic
+            const nextBtn = document.getElementById('next-page');
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentPage = (currentPage % totalPages) + 1;
+                    showPage(currentPage);
+
+                    pageButtons.forEach(b => {
+                        if (parseInt(b.dataset.page) === currentPage) {
+                            b.classList.add('bg-orange-600', 'text-white');
+                        } else {
+                            b.classList.remove('bg-orange-600', 'text-white');
+                        }
+                    });
+                });
+            }
+
+            // Initial render
+            showPage(currentPage);
+        });
+    </script>
+
 
 </body>
 
