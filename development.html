@@ -45,11 +45,12 @@
         }
 
         .parallax {
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
+
 
         .orange-tint {
             background: linear-gradient(to top, rgba(234, 88, 12, 0.7), transparent);
@@ -162,6 +163,13 @@
             pointer-events: none;
             color: #6b7280;
         }
+
+        @media (max-width: 768px) {
+            .development-hero {
+                background-size: contain;
+                background-position: top;
+            }
+        }
     </style>
 </head>
 <script>
@@ -255,7 +263,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 development-hero text-white parallax">
+    <section class="development-hero parallax text-white relative w-full pt-32 pb-20 aspect-[16/9] sm:aspect-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in delay-100">RESIDENTIAL <span
@@ -331,8 +339,7 @@
                 </div>
                 <div class="animate-fade-in delay-100">
                     <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
-                        <img src="images/214-main.JPG"
-                            alt="Residential development" class="w-full h-auto">
+                        <img src="images/214-main.JPG" alt="Residential development" class="w-full h-auto">
                         <div class="absolute inset-0 orange-tint"></div>
                     </div>
                 </div>
@@ -543,8 +550,7 @@
                 </div>
                 <div class="animate-fade-in delay-100">
                     <div class="relative overflow-hidden rounded-xl shadow-xl hover-scale">
-                        <img src="images/400-main.jpeg"
-                            alt="Construction site" class="w-full h-auto">
+                        <img src="images/400-main.jpeg" alt="Construction site" class="w-full h-auto">
                         <div class="absolute inset-0 orange-tint"></div>
                     </div>
                 </div>
@@ -688,8 +694,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="mb-8 md:mb-0">
                     <div class="mb-4">
-                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo"
-                            class="h-17 object-contain">
+                        <img src="images/Gridiron-02.png" alt="Gridiron Construction Logo" class="h-17 object-contain">
                     </div>
                     <p class="text-blue-200 mb-4">Building the future with excellence.</p>
                     <div class="flex space-x-4">
@@ -704,7 +709,8 @@
                     <ul class="space-y-2">
                         <li><a href="index.html#services" class="text-blue-200 hover:text-white">All Services</a></li>
                         <li><a href="acquisitions.html" class="text-blue-200 hover:text-white">Acquisitions</a></li>
-                        <li><a href="construction-services.html" class="text-blue-200 hover:text-white">Construction Services</a></li>
+                        <li><a href="construction-services.html" class="text-blue-200 hover:text-white">Construction
+                                Services</a></li>
                         <li><a href="development.html" class="text-blue-200 hover:text-white">Development</a></li>
                     </ul>
                 </div>
